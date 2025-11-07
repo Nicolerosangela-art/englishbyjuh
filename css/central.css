@@ -1,0 +1,201 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 25px;
+    background: linear-gradient(135deg, #152d58 0%, #2a5298 100%);
+    color: #f0f3f5;
+    border-radius: 16px;
+}
+
+h1 {
+    text-align: center;
+    color: #f5d547;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: rgb(255, 251, 0);
+    text-decoration: underline;
+}
+
+form {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #003366;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+}
+
+
+#search-input {
+    padding: 10px 14px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    width: 250px;
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+
+form button[type="submit"] {
+    padding: 10px 18px;
+    background-color: #3d1ef1;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+    background-color: #2012e7;
+}
+
+button {
+    background-color: #6a1b9a;
+    color: #400ff1;
+    border: 2px solid #0f13f1;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: 'Cinzel Decorative', cursive;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #9b59b6;
+    box-shadow: 0 0 15px #4b0ff1, 0 0 30px #3b3eff;
+    transform: scale(1.05);
+}
+
+.hp-button {
+    background: linear-gradient(135deg, #0e1a40, #5436c2);
+    /* Azul escuro e dourado */
+    color: #f5f5dc;
+    font-family: 'Harry P', cursive;
+    font-size: 1.1em;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #2d53fd;
+    transition: all 0.3s ease;
+}
+
+
+.hp-button:hover {
+    background: linear-gradient(135deg, #1a237e, #310bb8);
+    box-shadow: 0 0 20px #0059ff;
+    transform: scale(1.05);
+}
+
+
+
+.spark {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgb(0, 89, 255);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: spark 0.8s forwards;
+}
+
+
+@keyframes spark {
+    from {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: translate(var(--x), var(--y)) scale(0.2);
+    }
+}
+
+.lumos {
+    position: absolute;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, #fff6a9, transparent);
+    opacity: 0;
+    pointer-events: none;
+    animation: lumos 1s forwards;
+}
+
+@keyframes lumos {
+    0% {
+        opacity: 0;
+        transform: scale(0.2);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+.fale-conosco {
+    display: flex;
+    flex-direction: column;
+    /* empilha texto e botão verticalmente */
+    align-items: flex-start;
+    /* alinha à esquerda */
+    gap: 10px;
+    /* espaçamento entre texto e botão */
+    padding: 10px;
+}
+
+.hp-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #3897f0;
+    /* cor estilo Instagram */
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.hp-button:hover {
+    background-color: #2a76c9;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 600px) {
+    .hp-button {
+        width: 100%;
+        /* botão ocupa toda a largura da tela */
+        font-size: 14px;
+    }
+}

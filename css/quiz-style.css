@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ===== SEÇÕES E CONTEÚDO ===== */
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  transition: opacity 0.5s ease;
+}
+.quiz{
+  position: relative;
+  background-color: #81b1e732;
+  height: 80vh;
+  border: solid 2px #015ac0;
+  border-radius: 10px;
+}
+
+
+.questao2,
+.questao3,
+.resultado{
+  display:  none;
+
+}
+
+h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.alternativas{
+  width: 100%;
+  margin-top: 10%;
+  display: grid ;
+  justify-content: center;
+  grid-template-columns: repeat(3, 15%);
+  grid-template-rows: repeat(2,1fr);
+  gap: 5%;
+
+}
+
+/* ===== BOTÕES ===== */
+.botao-continuar{
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+}
+
+
+.botao1,
+.botao-continuar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #f2f2f2;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.botao1:hover,
+.botao-continuar:hover {
+  background-color: #e6e6e6;
+  transform: scale(1.05);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.botao1 img,
+.botao-continuar img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s;
+}
+
+.botao-continuar:hover img {
+  transform: translateX(5px);
+}
+
+/* ===== BARRA DE PROGRESSO ===== */
+progress {
+  width: 100%;
+  max-width: 600px;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  appearance: none;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #f2f2f2;
+  border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+  background-color: #015ac0;
+  border-radius: 10px;
+}
+
+progress::-moz-progress-bar {
+  background-color: #015ac0;
+  border-radius: 10px;
+}
+
+.personagem{
+  width: 35vh; /* quanto menor o número, menor a imagem */
+  height: auto; /* mantém as proporções corretas */
+}
