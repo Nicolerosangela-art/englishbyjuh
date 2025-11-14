@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serviços</title>
-    <link rel="stylesheet" href="serviçosv1.css">
+    <title>Layout Responsivo - Grid e Flexbox</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/servico-style.css">
 </head>
 
 <body>
     <!-- Header com Flexbox -->
     <header>
         <div class="header-content">
-            <h1>Serviços</h1>
+            <h1>🎨 Projeto Responsivo</h1>
+            <p>Grid Layout + Flexbox em ação</p>
         </div>
     </header>
 
@@ -24,8 +26,8 @@
             <div class="card-flip">
                 <div class="card card-front">
                     <div class="card-icon">💻</div>
-                    <h3>Pacotes mais comprados</h3>
-                    <p>Perfeito para quem está começando do zero!</p>
+                    <h3>Desenvolvimento Web</h3>
+                    <p>Criamos sites modernos e responsivos utilizando as melhores tecnologias do mercado.</p>
                     <button class="btn btn-flip">Saiba mais</button>
                 </div>
                 <div class="card card-back">
@@ -36,9 +38,8 @@
                         <li>🔝 Top de vendas! Pacotes que unem qualidade e resultados reais!</li>
 
                         <li>🚀 Os pacotes mais comprados estão com desconto — aproveite agora!</li>
-
-                        <li>⭐ Sucesso entre nossos alunos: confira os pacotes mais procurados e comece já!</li>
                     </ul>
+                    <p class="preco">A partir de R$ 2.500</p>
                     <button class="btn btn-flip">Voltar</button>
                 </div>
             </div>
@@ -47,8 +48,8 @@
             <div class="card-flip">
                 <div class="card card-front">
                     <div class="card-icon">📱</div>
-                    <h3>Promoções</h3>
-                    <p>Ideal para quem já entende, mas quer se comunicar com confiança.</p>
+                    <h3>Apps Mobile</h3>
+                    <p>Desenvolvemos aplicativos nativos e híbridos para iOS e Android.</p>
                     <button class="btn btn-flip">Saiba mais</button>
                 </div>
                 <div class="card card-back">
@@ -70,8 +71,8 @@
             <div class="card-flip">
                 <div class="card card-front">
                     <div class="card-icon">🎨</div>
-                    <h3>Aulas mais avaliadas</h3>
-                    <p>Para quem quer alcançar a fluência total!</p>
+                    <h3>Design UI/UX</h3>
+                    <p>Interfaces intuitivas e experiências memoráveis para seus usuários.</p>
                     <button class="btn btn-flip">Saiba mais</button>
                 </div>
                 <div class="card card-back">
@@ -85,6 +86,7 @@
 
                         <li>💯 Top aulas, top avaliações — venha experimentar!</li>
                     </ul>
+                    <p class="preco">A partir de R$ 1.800</p>
                     <button class="btn btn-flip">Voltar</button>
                 </div>
             </div>
@@ -93,8 +95,8 @@
             <div class="card-flip">
                 <div class="card card-front">
                     <div class="card-icon">🚀</div>
-                    <h3>Aulas</h3>
-                    <p>O equilíbrio perfeito entre o básico e o avançado!</p>
+                    <h3>SEO e Marketing</h3>
+                    <p>Estratégias para aumentar sua visibilidade e alcançar mais clientes.</p>
                     <button class="btn btn-flip">Saiba mais</button>
                 </div>
                 <div class="card card-back">
@@ -108,6 +110,7 @@
 
                         <li>🚀 Evolua aula após aula e alcance a fluência!</li>
                     </ul>
+                    <p class="preco">A partir de R$ 1.200/mês</p>
                     <button class="btn btn-flip">Voltar</button>
                 </div>
             </div>
@@ -133,22 +136,37 @@
                 <p>Essencial Intermediário</p>
             </div>
         </section>
+         <!-- Seção de Avaliações Horizontais -->
+        <div class="cards">
+    <h3>Gostou do nosso serviço?</h3>
+    <p>Deixe sua avaliação ⭐</p>
+
+    <div id="stars">
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+    </div>
+
+    <input type="text" id="nome" placeholder="Seu nome..."
+      style="margin-top:10px; width: 100%; padding:8px; border-radius:8px; border:1px solid #ccc; font-family: 'Inter'; font-size:14px;">
+
+    <textarea id="comentario" placeholder="Escreva aqui sua opinião..."></textarea>
+
+    <button class="btns" id="enviar">Enviar Avaliação</button>
+
+    <p class="mensagem" id="mensagem">✅ Obrigado pela sua avaliação!</p>
+  </div>
+
+  <div class="avaliacoes-container">
+    <div class="avaliacoes" id="lista-avaliacoes">
+      <!-- Avaliações horizontais aparecerão aqui -->
+    </div>
+  </div>
     </main>
-    <br>
-    <!-- Botão Flutuante do WhatsApp -->
-    <a href="https://wa.me/5511999890865?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços."
-        class="whatsapp-float" target="_blank" aria-label="Fale conosco no WhatsApp">
-        <span class="whatsapp-icon">💬</span>
-        <!---<span class="whatsapp-text">Fale Conosco</span>-->
-    </a>
-
-
-
     <!-- JavaScript -->
-    <script src="js/script.js"></script>
-</body>
-
-</html>
+    <script src="../js/servico-script.js"></script>
 </body>
 
 </html>
