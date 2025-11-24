@@ -2,188 +2,317 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz de Inglês - Hogwarts</title>
 
-    <!-- ===== CSS ===== -->
-    <link rel="stylesheet" href="../css/nav.css">
-    <link rel="stylesheet" href="../css/quiz-style.css">
+  <!-- ===== CSS ===== -->
+  <link rel="stylesheet" href="../css/nav.css">
+  <link rel="stylesheet" href="../css/quiz-style.css">
+  <link rel="stylesheet" href="../css/style.css">
 
-    <!-- ===== FONTAWESOME (ícones) ===== -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <!-- ===== FONTAWESOME ===== -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-    <!-- ===== FAVICON ===== -->
-    <link rel="shortcut icon" href="img/agente-de-atendimento-ao-cliente (1).png" type="image/x-icon">
+  <!-- ===== FAVICON ===== -->
+  <link rel="shortcut icon" href="img/agente-de-atendimento-ao-cliente (1).png" type="image/x-icon">
 </head>
 
 <body>
+  <!-- ===== MENU LATERAL ===== -->
+  <nav id="sidebar">
+    <div id="sidebar_content">
 
-    <!-- ===== MENU LATERAL ===== -->
-    <nav id="sidebar">
-        <div id="sidebar_content">
+      <!-- ===== USUÁRIO ===== -->
+      <div id="user">
+        <img src="../img/porco.png" id="user_avatar" alt="Avatar">
+        <p id="user_infos">
+          <span class="item-description">Fulano de Tal</span>
+          <span class="item-description">Nível de inglês</span>
+        </p>
+      </div>
 
-            <!-- ===== USUÁRIO ===== -->
-            <div id="user">
-                <img src="../img/porco.png" id="user_avatar" alt="Avatar">
-                <p id="user_infos">
-                    <span class="item-description">Fulano de Tal</span>
-                    <span class="item-description">Nível de inglês</span>
-                </p>
-            </div>
+      <!-- ===== ITENS DO MENU ===== -->
+      <ul id="side_items">
+        <li class="side-item" >
+          <a href="../index.html">
+            <i class="fa-solid fa-house"></i>
+            <span class="item-description">Início</span>
+          </a>
+        </li>
 
-            <!-- ===== ITENS DO MENU ===== -->
-            <ul id="side_items">
-                <li class="side-item active">
-                    <a href="#">
-                        <i class="fa-solid fa-house"></i>
-                        <span class="item-description">Início</span>
-                    </a>
-                </li>
+        <li class="side-item">
+          <a href="./servico.html">
+            <i class="fa-solid fa-briefcase"></i>
+            <span class="item-description">Serviços</span>
+          </a>
+        </li>
 
-                <li class="side-item">
-                    <a href="#">
-                        <i class="fa-solid fa-briefcase"></i>
-                        <span class="item-description">Serviços</span>
-                    </a>
-                </li>
+        <li class="side-item active">
+          <a href="./quiz.html">
+            <i class="fa-solid fa-gamepad"></i>
+            <span class="item-description">Quiz</span>
+          </a>
+        </li>
 
-                <li class="side-item">
-                    <a href="#">
-                        <i class="fa-solid fa-address-book"></i>
-                        <span class="item-description">Contatos</span>
-                    </a>
-                </li>
+        <li class="side-item">
+          <a href="./centraldeajuda.html">
+            <i class="fa-solid fa-circle-question"></i>
+            <span class="item-description">Central de Ajuda</span>
+          </a>
+        </li>
+      </ul>
 
-                <li class="side-item">
-                    <a href="#">
-                        <i class="fa-solid fa-circle-question"></i>
-                        <span class="item-description">Central de Ajuda</span>
-                    </a>
-                </li>
-            </ul>
+      <!-- ===== BOTÃO DE ABRIR MENU ===== -->
+      <button id="open_btn" title="Abrir/Fechar menu">
+        <i id="open_btn_icon" class="fa-solid fa-angle-right"></i>
+      </button>
 
-            <!-- ===== BOTÃO DE ABRIR MENU ===== -->
-            <button id="open_btn" title="Abrir/Fechar menu">
-                <i id="open_btn_icon" class="fa-solid fa-angle-right"></i>
-            </button>
+    </div>
+  </nav>
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <main>
+   
 
+    <!-- ===== SEÇÃO 1 ===== -->
+    <section class="questao quiz" >
+      <div class="personagem-container">
+        <progress max="100" value="1">10%</progress>
+      </div>
+     <div class="quiz-container">
+      <h1>⚡ Hogwarts English Quiz ⚡</h1>
+
+      <div class="progress-bar">
+        <div class="progress"></div>
+      </div>
+
+      <div id="question-container"></div>
+    </div>
+      <button id="btn-1" class="botao-continuar" type="button">
+        Continuar <i class="fa-solid fa-angle-right"></i>
+      </button>
+    </section>
+    <!-- ===== SEÇÃO 2 ===== -->
+    <section class="quiz questao2">
+      <h3>Como conheceu o curso?</h3>
+      <progress max="100" value="20">20%</progress>
+
+      <div class="alternativas">
+        <button onclick="resposta()" class="botao1" type="button">
+          <img src="../img/icon/familiaicon.png" alt="Família"> Família
+        </button>
+        <button class="botao1" type="button">
+          <img src="../img/icon/linkedinicon.png" alt="LinkedIn"> LinkedIn
+        </button>
+        <button class="botao1" type="button">
+          <img src="../img/icon/youtubeicon.png" alt="YouTube"> YouTube
+        </button>
+        <button class="botao1" type="button">
+          <img src="../img/icon/instagramicon.png" alt="Instagram"> Instagram
+        </button>
+        <button class="botao1" type="button">
+          <img src="../img/icon/tiktokicon.png" alt="TikTok"> TikTok
+        </button>
+        <button class="botao1" type="button">
+          <img src="../img/icon/outrosicon.png" alt="Outros"> Outros
+        </button>
+      </div>
+
+      <button id="btn-2" class="botao-continuar" type="button">
+        Continuar <i class="fa-solid fa-angle-right"></i>
+      </button>
+    </section>
+
+    <!-- ===== SEÇÃO 3 ===== -->
+    <section class="questao3 quiz">
+      <h3>Você pretende aprender inglês para...</h3>
+      <progress max="100" value="30">30%</progress>
+
+      <div class="alternativas">
+        <button class="botao1" type="button">
+          <img src="../img/viagemicon.png" alt="Viagem"> Viagem
+        </button>
+
+        <button class="botao1" type="button">
+          <img src="../img/estagioicon.png" alt="Estágio"> Estágio
+        </button>
+
+        <button class="botao1" type="button">
+          <img src="../img/estudosicon.png" alt="Estudos"> Estudos
+        </button>
+
+        <button class="botao1" type="button">
+          <img src="../img/trabalhosicon.png" alt="Trabalhos"> Trabalhos
+        </button>
+
+        <button class="botao1" type="button">
+          <img src="../img/diversaoicon.png" alt="Diversão"> Diversão
+        </button>
+
+        <button class="botao1" type="button">
+          <img src="../img/outrosicon.png" alt="Outros"> Outros
+        </button>
+      </div>
+
+      <button id="btn-3" type="button" class="botao-continuar">
+        Continuar <i class="fa-solid fa-angle-right"></i>
+      </button>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- ===== SEÇÕES 4 A 9 (ADICIONADAS) ===== -->
+    <!-- ========================================= -->
+
+    <!-- SEÇÃO 4 -->
+    <section class="questao4 quiz">
+      <h3>Question 4: What is the correct plural form of "child"?</h3>
+      <progress max="100" value="40"> 40%</progress>
+
+      <div class="alternativas">
+        <button class="botao1">A) Childs</button>
+        <button class="botao1">B) Children</button>
+        <button class="botao1">C) Childes</button>
+        <button class="botao1">D) Childrens</button>
+      </div>
+
+      <button id="btn-4" class="botao-continuar">
+        Continuar <i class="fa-solid fa-angle-right"></i>
+      </button>
+    </section>
+
+    <!-- SEÇÃO 5 -->
+    <section class="questao5 quiz">
+      <h3>Question 5: Choose the correct translation: "Eu gosto de estudar inglês."</h3>
+      <progress max="100" value="50">50%</progress>
+
+      <div class="alternativas">
+        <button class="botao1">A) I study English well.</button>
+        <button class="botao1">B) I like studying English.</button>
+        <button class="botao1">C) I want to learn English.</button>
+        <button class="botao1">D) I am studying English now.</button>
+      </div>
+
+      <button id="btn-5" class="botao-continuar">
+        Continuar <i class="fa-solid fa-angle-right"></i>
+      </button>
+    </section>
+
+    <!-- SEÇÃO 6 -->
+    <section class="questao6 quiz">
+      <h3>Question 6: Which sentence is in the past tense?</h3>
+      <progress max="100" value="60">60%</progress>
+
+      <div class="alternativas">
+        <button class="botao1">A) I will go to school.</button>
+        <button class="botao1">B) I am going to school.</button>
+        <button class="botao1">C) I went to school.</button>
+        <button class="botao1">D) I go to school.</button>
+      </div>
+
+      <button id="btn-6" class="botao-continuar">
+        Continuar <i class="fa-solid fa-angle-right"></i>
+      </button>
+    </section>
+
+    <!-- SEÇÃO 7 -->
+    <section class="questao7 quiz">
+      <h3>Question 7: What is the opposite of "difficult"?</h3>
+      <progress max="100" value="70">70%</progress>
+
+      <div class="alternativas">
+        <button class="botao1">A) Hard</button>
+        <button class="botao1">B) Easy</button>
+        <button class="botao1">C) Heavy</button>
+        <button class="botao1">D) Light</button>
+      </div>
+
+      <button id="btn-7" class="botao-continuar">
+        Continuar <i class="fa-solid fa-angle-right"></i>
+      </button>
+    </section>
+
+    <!-- SEÇÃO 8 -->
+    <section class="questao8 quiz">
+      <h3>Question 8: Complete the sentence: "She ____ coffee every morning."</h3>
+      <progress max="100" value="80">80%</progress>
+
+      <div class="alternativas">
+        <button class="botao1">A) drink</button>
+        <button class="botao1">B) is drinking</button>
+        <button class="botao1">C) drinks</button>
+        <button class="botao1">D) drank</button>
+      </div>
+
+      <button id="btn-8" class="botao-continuar">
+        Continuar <i class="fa-solid fa-angle-right"></i>
+      </button>
+    </section>
+
+    <!-- SEÇÃO 9 -->
+    <section class="questao9 quiz">
+      <h3>Question 9: Which option is a correct greeting?</h3>
+      <progress max="100" value="90">90%</progress>
+
+      <div class="alternativas">
+        <button class="botao1">A) Good morning!</button>
+        <button class="botao1">B) Good night! (as a greeting)</button>
+        <button class="botao1">C) Bye!</button>
+        <button class="botao1">D) Sleep well!</button>
+      </div>
+
+      <button id="btn-9" class="botao-continuar">
+        <progress max="100" value="100">100%</progress>
+        Finalizar <i class="fa-solid fa-check"></i>
+      </button>
+    </section>
+    <section class="resultado quiz">
+      <h2 id="mensagem-final">🎉 Parabéns! 🎉</h2>
+      <p id="acertos"></p>
+      <p id="casa-hogwarts"></p>
+
+      <button id="btn-final" class="botao-continuar">
+        Ver formulário <i class="fa-solid fa-angle-right"></i>
+      </button>
+    </section>
+
+    <!-- ===== SEÇÃO DE CONTATO ===== -->
+    <section id="contato" class="formulario quiz">
+      <h2>Contato</h2>
+      <div class="container">
+        <h1>Vamos conversar!</h1>
+        <div class="form-container">
+          <h2 class="form-title">formulário</h2>
+
+          <form>
+            <label>Seu nome:</label>
+            <input type="text" placeholder="Digite seu nome..." required>
+
+            <label>Email:</label>
+            <input type="email" placeholder="Digite seu email..." required>
+
+            <label>Telefone (11 dígitos):</label>
+            <input type="tel" id="telefone" name="telefone" pattern="[0-9]{11}" placeholder="11999999999"
+              title="Digite exatamente 11 números" required>
+
+          
+
+
+
+            <button type="submit" class="btn-cute">Enviar ✨</button>
+          </form>
         </div>
-    </nav>
-    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
-    <main>
-        <h1>Título</h1>
-
-        <!-- ===== SEÇÃO 1 ===== -->
-        <section class="questao">
-
-            <div class="personagem-container">
-                <img src="../img/personagem.png" alt="personagem" class="personagem">
-                <img src="../img/balaodoi.png" alt="balão dizendo oi" class="balao-fala">
-            </div>
-
-            <button id="btn-1"  class="botao-continuar" type="button">
-                Continuar
-                <i class="fa-solid fa-angle-right"></i>
-            </button>
-        </section>
-
-
-        </section>
-
-        <!-- ===== SEÇÃO 2 ===== -->
-        <section class=" quiz questao2">
-            <h3>Como conheceu o curso?</h3>
-           
-            <progress title="giha"  max="100" value="50">50%</progress>
-            <div class="alternativas">
-
-                <button onclick="resposta()" class="botao1" type="button">
-                    <img src="../img/icon/familiaicon.png" alt="Família">
-                    Família
-
-                </button>
-                <button class="botao1" type="button">
-                    <img src="../img/icon/linkedinicon.png" alt="LinkedIn">
-                    LinkedIn
-                </button>
-                <button class="botao1" type="button">
-                    <img src="../img/icon/youtubeicon.png" alt="YouTube">
-                    YouTube
-                </button>
-                <button class="botao1" type="button">
-                    <img src="../img/icon/instagramicon.png" alt="Instagram">
-                    Instagram
-                </button>
-                <button class="botao1" type="button">
-                    <img src="../img/icon/tiktokicon.png" alt="TikTok">
-                    TikTok
-                </button>
-                <button class="botao1" type="button">
-                    <img src="../img/icon/outrosicon.png" alt="Outros">
-                    Outros
-                </button>
-            </div>
-
-            <button id="btn-2" class="botao-continuar" type="button">
-                Continuar
-                <i class="fa-solid fa-angle-right"></i>
-            </button>
-        </section>
-
-        <!-- ===== SEÇÃO 3 ===== -->
-        <section class="questao3">
-            <h3>Você pretende aprender inglês para...</h3>
-            <progress title="ggg" max="100" value="100">100%</progress>
-
-            <div>
-                <button type="button" class="metado1">
-                    <img src="imagens/viagem.png" alt="Viagem">
-                    Viagem
-                </button>
-
-                <button type="button" class="metado1">
-                    <img src="imagens/estagio.png" alt="Estágio">
-                    Estágio
-                </button>
-
-                <button type="button" class="metado1">
-                    <img src="imagens/estudos.png" alt="Estudos">
-                    Estudos
-                </button>
-
-                <button type="button" class="metado1">
-                    <img src="imagens/trabalhos.png" alt="Trabalhos">
-                    Trabalhos
-                </button>
-
-                <button type="button" class="metado1">
-                    <img src="imagens/diversao.png" alt="Diversão">
-                    Diversão
-                </button>
-
-                <button type="button" class="metado1">
-                    <img src="imagens/outros.png" alt="Outros">
-                    Outros
-                </button>
-            </div>
-
-            <button id="btn-3" type="button" class="botao-continuar">
-                Continuar
-                <i class="fa-solid fa-angle-right"></i>
-            </button>
-        </section>
-    </main>
+      </div>
+    </section>
 
 
 
-    <!-- ===== FOOTER ===== -->
-    <footer>
-        <p>Zero to Hero.</p>
-    </footer>
-    <!-- ===== SCRIPT ===== -->
-    <script src="../js/nav.js"></script>
-    <script src="../js/quiz-script.js"></script>
+
+  </main>
+  <footer>✨ Feito com magia ✨</footer>
+  <!-- ===== SCRIPTS ===== -->
+  <script src="../js/nav.js"></script>
+  <script src="../js/quiz-script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>

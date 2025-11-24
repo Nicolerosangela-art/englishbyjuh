@@ -5,37 +5,286 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Central de Ajuda-projeto by juh</title>
-    <link rel="shortcut icon" href="../img/agente-de-atendimento-ao-cliente (1).png " type="image/x-icon">
-    <link rel="stylesheet" href="../css/central.css" />
+    <link rel="shortcut icon" href="../img/central.png " type="image/x-icon">
+    <!-- ===== FONTAWESOME (ícones) ===== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/central-style.css">
+    <link rel="stylesheet" href="../css/nav.css">
 </head>
 
-<body>
-    <header>
-        <h1>Central de Ajuda</h1>
-        <p>Encontre respostas para suas dúvidas!</p>
-    </header>
 
-    <nav aria-label="Categorias de ajuda">
-        <h2>Categorias</h2>
-        <ul>
-            <li><a href="#">Conta e Cadastro</a></li>
-            <li><a href="#">Aulas</a></li>
-            <li><a href="#">Materiais</a></li>
-            <li><a href="#">Pagamentos</a></li>
-        </ul>
+<body>
+
+    <!-- ===== MENU LATERAL ===== -->
+    <nav id="sidebar">
+        <div id="sidebar_content">
+
+            <!-- ===== USUÁRIO ===== -->
+            <div id="user">
+                <img src="../img/porco.png" id="user_avatar" alt="Avatar">
+                <p id="user_infos">
+                    <span class="item-description">Fulano de Tal</span>
+                    <span class="item-description">Nível de inglês</span>
+                </p>
+            </div>
+
+            <!-- ===== ITENS DO MENU ===== -->
+            <ul id="side_items">
+                <li class="side-item ">
+                    <a href="../index.html">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="item-description">Início</span>
+                    </a>
+                </li>
+
+                <li class="side-item">
+                    <a href="./servico.html">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <span class="item-description">Serviços</span>
+                    </a>
+                </li>
+
+                <li class="side-item">
+                    <a href="./quiz.html">
+                        <i class="fa-solid fa-gamepad"></i>
+                        <span class="item-description">Quiz</span>
+                    </a>
+                </li>
+
+                <li class="side-item active">
+                    <a href="./centraldeajuda.html">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <span class="item-description">Central de Ajuda</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- ===== BOTÃO DE ABRIR MENU ===== -->
+            <button id="open_btn" title="Abrir/Fechar menu">
+                <i id="open_btn_icon" class="fa-solid fa-angle-right"></i>
+            </button>
+
+        </div>
     </nav>
 
-    <main>
-        <section aria-labelledby="faq-title">
-            <h2 id="faq-title">Perguntas Frequentes</h2>
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main id="main-content">
+        <header>
+            <h1>Central de Ajuda</h1>
+            <p>Encontre respostas para suas dúvidas!</p>
+        </header>
+
+
+
+        <h2 class="faq-title">Perguntas Frequentes </h2>
+        <nav aria-label="Categorias de ajuda">
+            <h2>Categorias</h2>
             <ul>
-                <li><a href="#">Como recuperar minha senha?</a></li>
-                <li><a href="#">Quais são as formas de pagamento aceitas?</a></li>
-                <li><a href="#">Como acessar os materiais das aulas?</a></li>
-                <li><a href="#">Como solicitar reembolso?</a></li>
-                <li><a href="#">Como entro em contato?</a></li>
+                <li><a href="#conta">Conta e Cadastro</a></li>
+                <li><a href="#pagamentos">Pagamentos</a></li>
+                <li><a href="#aulas">Aulas</a></li>
+                <li><a href="#materiais">Materiais</a></li>
+            </ul>
+        </nav>
+        <section id="conta" class="faq-section" aria-labelledby="faq-title">
+            <h2 id="faq-title">Conta e Cadastro </h2>
+            <ul>
+                <li>
+                    <h3><button>
+                            <span>
+                                Como recuperar minha senha?
+                            </span>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                    </h3>
+                    <p>
+                        Para recuperar sua senha, acesse a página de login e clique em “Esqueci minha senha”.
+                        Você receberá um e-mail com um link para criar uma nova senha.
+                        Caso não encontre o e-mail, verifique sua caixa de spam ou lixeira.
+                    </p>
+
+
+                </li>
+                <li>
+                    <h3><button>
+                            <span>
+                                Como entro em contato?
+                            </span>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                    </h3>
+                    <p>
+                        Você pode entrar em contato através do nosso Central de Ajuda, disponível no menu principal.
+                        Também oferecemos atendimento via e-mail e chat ao vivo de segunda a sexta.
+                    </p>
+
+
+                </li>
+                <li>
+                    <h3><button>
+                            <span>
+                                Como alterar meus dados pessoais?
+                            </span>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                    </h3>
+                    <p>
+                        No painel do usuário, acesse a área Configurações da Conta.
+                        Lá você pode atualizar seu nome, e-mail, foto de perfil e demais informações.
+                    </p>
+                </li>
             </ul>
         </section>
+        <section id="pagamentos" class="faq-section" aria-labelledby="faq-title">
+            <h2 id="faq-title">Pagamentos </h2>
+            <ul>
+                <li>
+                    <h3><button>
+                            <span>
+                                Como solicitar reembolso?
+                            </span>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                    </h3>
+                    <p>
+                        Você pode solicitar reembolso diretamente pelo painel do aluno em Configurações > Pagamentos.
+                        Lembre-se de verificar se o prazo de garantia ainda está válido.
+                    </p>
+
+
+                </li>
+                <li>
+                    <h3><button>
+                            <span>
+                                Quais são as formas de pagamento aceitas?
+                            </span>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                    </h3>
+                    <p>
+                        Atualmente, aceitamos apenas pagamentos via PIX.
+                        Essa forma de pagamento garante rapidez, segurança e confirmação imediata, facilitando sua
+                        compra e agilizando todo o processo.
+                    </p>
+
+
+                </li>
+                <li>
+                    <h3><button>
+                            <span>
+                                Recebo nota fiscal após a compra?
+                            </span>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                    </h3>
+                    <p>
+                        Sim! A nota fiscal é enviada automaticamente para seu e-mail após a confirmação do pagamento.
+                    </p>
+
+
+                </li>
+            </ul>
+        </section>
+        <section id="aulas" class="faq-section" aria-labelledby="faq-title">
+            <h2 id="faq-title">Aulas</h2>
+            <ul>
+                <li>
+                    <h3><button>
+                            <span>
+                                Minhas aulas não estão carregando!
+                            </span>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                    </h3>
+                    <p>
+                        Tente atualizar a página ou fazer login novamente.
+                        Se o problema persistir, recomenda-se limpar o cache do navegador ou acessar por outro
+                        dispositivo.
+                    </p>
+
+
+                </li>
+                <li>
+                    <h3><button>
+                            <span>
+                                Posso assistir às aulas pelo celular?
+                            </span>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                    </h3>
+                    <p>
+                        Sim! Todas as aulas são otimizadas para dispositivos móveis, incluindo tablets e smartphones
+                        Android/iOS.
+                    </p>
+
+
+                </li>
+                <li>
+                    <h3><button>
+                            <span>
+                                Como saber quando novas aulas são adicionadas?
+                            </span>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                    </h3>
+                    <p>
+                        Sempre que uma nova aula é publicada, você recebe uma notificação no painel do aluno.
+                        Também é possível ativar alertas por e-mail para acompanhar atualizações do seu curso.
+                    </p>
+
+
+                </li>
+            </ul>
+        </section>
+        <section id="materiais" class="faq-section" aria-labelledby="faq-title">
+            <h2 id="faq-title">Materiais </h2>
+            <ul>
+                <li>
+                    <h3><button>
+                            <span>
+                                Os materiais ficam disponíveis para sempre?
+                            </span>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                    </h3>
+                    <p>
+                        Sim, após adquirir o curso, os materiais permanecem acessíveis sem prazo de expiração.
+                    </p>
+
+
+                </li>
+                <li>
+                    <h3><button>
+                            <span>
+                                Posso acessar os materiais pelo celular?
+                            </span>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                    </h3>
+                    <p>
+                        Sim! Todos os materiais são compatíveis com dispositivos móveis, permitindo leitura e download
+                        direto no smartphone.
+                    </p>
+
+
+                </li>
+                <li>
+                    <h3><button>
+                            <span>
+                                Como acessar os materiais das aulas?
+                            </span>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                    </h3>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                        been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                        galley of type and scrambled it to make a type specimen book.
+                    </p>
+                </li>
+            </ul>
+        </section>
+
 
         <section aria-labelledby="search-title">
             <h2 id="search-title">Buscar</h2>
@@ -46,28 +295,34 @@
             </form>
         </section>
     </main>
+    <section id="contatos" class="contatos-section">
+        <h2>Fale Conosco</h2>
+        <p>Se você não encontrou o que procurava, nossa equipe está pronta para ajudar!</p>
 
-    <footer>
-        <div class="fale-conosco">
-            <p>Se você não encontrou o que procurava, entre em contato com o nosso suporte:</p>
+        <div class="contatos-cards">
 
-            <div class="social-buttons">
-                <a href="https://www.instagram.com/ingles_byju?igsh=MXE3OWJpOG8zYWh3dg==" target="_blank"
-                    aria-label="Ir para o Instagram" class="social-btn instagram">
-                    <img src="../img/instagram.png" alt="Ícone do Instagram">
-                </a>
-
-                <a href="https://wa.me/5511975898312" target="_blank" aria-label="Entrar em contato pelo WhatsApp"
-                    class="social-btn whatsapp">
-                    <img src="../img/whatsapp.png" alt="Ícone do WhatsApp">
-                </a>
+            <div class="contato-card">
+                <img src="../img/icon/instagramicon.png" alt="Instagram">
+                <h3>Instagram</h3>
+                <p>Acompanhe novidades e mande sua dúvida pelo direct.</p>
+                <a href="https://www.instagram.com/ingles_byju" target="_blank" class="contato-btn">Acessar</a>
             </div>
+
+            <div class="contato-card">
+                <img src="../img/icon/whatsapp (2).png" alt="WhatsApp">
+                <h3>WhatsApp</h3>
+                <p>Fale diretamente com nosso suporte em poucos segundos.</p>
+                <a href="https://wa.me/5511975898312" target="_blank" class="contato-btn whatsapp">Enviar mensagem</a>
+            </div>
+
         </div>
-    </footer>
+    </section>
 
-    </footer>
-    <script src="js/central de ajudas"></script>
 
+    <footer>✨ Feito com magia ✨</footer>
+
+    <script src="../js/nav.js"></script>
+    <script src="../js/central-script.js"></script>
 </body>
 
 </html>

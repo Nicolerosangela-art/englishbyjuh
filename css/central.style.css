@@ -1,0 +1,382 @@
+/* ============================
+   ESTILO GERAL DA PÁGINA
+============================ */
+body {
+    font-family: "Poppins", sans-serif;
+    background: #eef2f7;
+    margin: 0;
+    padding: 0;
+    color: #1d1d1d;
+}
+
+/* Container principal */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #1d2d50;
+    margin-bottom: 10px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1rem;
+    color: #4b5b7a;
+    margin-bottom: 30px;
+}
+
+/* ============================
+   LINKS DAS CATEGORIAS
+============================ */
+.categories {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.categories a {
+    display: inline-block;
+    margin: 6px 10px;
+    padding: 7px 18px;
+    background: #fff;
+    color: #1d2d50;
+    font-weight: 600;
+    border-radius: 10px;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+.categories a:hover {
+    background: #dbe7ff;
+}
+
+/* ============================
+   TÍTULOS DE SEÇÃO
+============================ */
+h3 {
+    color: #1d2d50;
+    margin-top: 35px;
+    margin-bottom: 10px;
+}
+
+/* ============================
+   FAQ - LISTA DE PERGUNTAS
+============================ */
+.faq-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Cada card */
+.faq-section li {
+    background: #ffffff;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+/* Efeito hover do card */
+.faq-section li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* Cabeçalho da pergunta (botão) */
+.faq-section button {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    background: none;
+    color: #1d2d50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+/* Ícones */
+.faq-section button i {
+    font-size: 18px;
+    color: #1d2d50;
+    transition: 0.3s ease;
+}
+
+/* Girar ícone ao abrir */
+.faq-section li.open button i {
+    transform: rotate(180deg);
+}
+
+/* Texto da resposta */
+.faq-section p {
+    margin: 0;
+    padding: 0 20px 15px;
+    color: #444;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    display: none;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity .3s ease, max-height .4s ease;
+}
+
+/* Mostrar resposta ao abrir */
+.faq-section li.open p {
+    display: block;
+    opacity: 1;
+    max-height: 500px;
+}
+
+/* ============================
+   RODAPÉ
+============================ */
+.footer {
+    text-align: center;
+    color: #4b5b7a;
+    margin: 40px 0;
+    font-size: 0.9rem;
+}
+
+/* ================================
+   RESPONSIVIDADE
+================================ */
+
+/* ======== TABLETS (até 900px) ======== */
+@media (max-width: 900px) {
+
+    .fac {
+        padding: 30px;
+    }
+
+    .fac h2 {
+        font-size: 1.7rem;
+    }
+
+    .fac button {
+        padding: 18px 20px;
+        font-size: 1rem;
+    }
+
+    .fac p.active {
+        padding: 18px 20px;
+    }
+}
+
+/* ====== Estilo geral da seção ====== */
+section[aria-labelledby="search-title"] {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: "Poppins", sans-serif;
+}
+
+/* Título */
+section h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2d3e50;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Campo de texto */
+#search-input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #dadada;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Efeito quando clica no input */
+#search-input:focus {
+    border-color: #6a5acd;
+    box-shadow: 0 0 6px rgba(106, 90, 205, 0.4);
+    outline: none;
+}
+
+/* Botão */
+button[type="submit"] {
+    padding: 12px 20px;
+    border: none;
+    background: #6a5acd;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Botão hover */
+button[type="submit"]:hover {
+    background: #5848b8;
+}
+
+
+/* =============================
+   SEÇÃO DE CONTATOS
+============================== */
+
+.contatos-section {
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 40px;
+    background: #f6f7fb;
+    border-radius: 16px;
+}
+
+.contatos-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+
+.contatos-section p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.contatos-cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.contato-card {
+    background: #ffffff;
+    padding: 25px;
+    width: 250px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform .3s ease, box-shadow .3s ease;
+    text-align: center;
+}
+
+.contato-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.13);
+}
+
+.contato-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.contato-card h3 {
+    font-size: 1.2rem;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.contato-card p {
+    font-size: .95rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.contato-btn {
+    display: inline-block;
+    background: #3b4fff;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: .3s ease;
+}
+
+.contato-btn:hover {
+    background: #2e3adf;
+}
+
+.contato-btn.whatsapp {
+    background: #25D366;
+}
+
+.contato-btn.whatsapp:hover {
+    background: #1ebe58;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 600px) {
+    .contato-card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+
+/* ======== CELULARES (até 600px) ======== */
+@media (max-width: 600px) {
+
+    .fac {
+        padding: 20px;
+        border-radius: 14px;
+    }
+
+    .fac h2 {
+        font-size: 1.4rem;
+    }
+
+    .fac>ul>li {
+        border-width: 1.5px;
+    }
+
+    .fac button {
+        padding: 15px 15px;
+        font-size: 0.95rem;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .fac button i {
+        font-size: 1.1rem;
+    }
+
+    .fac p {
+        font-size: 0.9rem;
+        line-height: 1.4rem;
+    }
+
+    .fac p.active {
+        padding: 15px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        flex-direction: column;
+    }
+
+    #search-input,
+    button[type="submit"] {
+        width: 100%;
+    }
+
+    button[type="submit"] {
+        padding: 14px;
+        font-size: 18px;
+    }
+}

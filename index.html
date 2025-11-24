@@ -6,19 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ByJuh</title>
     <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/porco.png" type="image/x-icon">
     <!-- ===== FONTAWESOME (ícones) ===== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 
 <body>
+
     <!-- ===== MENU LATERAL ===== -->
     <nav id="sidebar">
         <div id="sidebar_content">
 
             <!-- ===== USUÁRIO ===== -->
             <div id="user">
-                <img src="img/porco.png" id="user_avatar" alt="Avatar">
+                <img src="./img/porco.png" id="user_avatar" alt="Avatar">
                 <p id="user_infos">
                     <span class="item-description">Fulano de Tal</span>
                     <span class="item-description">Nível de inglês</span>
@@ -28,28 +30,28 @@
             <!-- ===== ITENS DO MENU ===== -->
             <ul id="side_items">
                 <li class="side-item active">
-                    <a href="#">
+                    <a href="index.html">
                         <i class="fa-solid fa-house"></i>
                         <span class="item-description">Início</span>
                     </a>
                 </li>
 
                 <li class="side-item">
-                    <a href="#">
+                    <a href="./pages/servico.html">
                         <i class="fa-solid fa-briefcase"></i>
                         <span class="item-description">Serviços</span>
                     </a>
                 </li>
 
                 <li class="side-item">
-                    <a href="#">
-                        <i class="fa-solid fa-address-book"></i>
-                        <span class="item-description">Contatos</span>
+                    <a href="./pages/quiz.html">
+                        <i class="fa-solid fa-gamepad"></i>
+                        <span class="item-description">Quiz</span>
                     </a>
                 </li>
 
                 <li class="side-item">
-                    <a href="#">
+                    <a href="./pages/centraldeajuda.html">
                         <i class="fa-solid fa-circle-question"></i>
                         <span class="item-description">Central de Ajuda</span>
                     </a>
@@ -65,12 +67,53 @@
     </nav>
 
     <!--Ínicio da página-->
-    <div class="cards">
-            <div class="center">
-                <img src="img/fotos da juh/byjuh.jpeg" alt="">
+    <main class="page-container">
+        <div class="header-conteudo">
+            <h2>Título do Curso</h2>
+            <div class="profile-meta">
+                <p>+Foto da bygyh*</p>
             </div>
         </div>
-    </div>
+
+        <section class="secao-principal">
+            <div class="imagem-curso">
+            </div>
+            <div class="sobre-bygyh">
+                <h3>Sobre a bygyh</h3>
+                <p>[Conteúdo sobre a bygyh...]</p>
+            </div>
+        </section>
+
+        <section class="formacao-bygyh">
+            <h3>Formação da bygyh</h3>
+            <div class="grid-informacoes">
+                <div class="info-card"></div>
+                <div class="info-card"></div>
+                <div class="info-card"></div>
+            </div>
+        </section>
+
+        <section class="estatisticas">
+            <div class="grafico-card">
+                <div class="grafico-circulo">
+                </div>
+                <ul class="grafico-legenda">
+                    <li>Legenda 1</li>
+                    <li>Legenda 2</li>
+                </ul>
+            </div>
+
+            <div class="grafico-card">
+                <div class="grafico-circulo">
+                </div>
+                <ul class="grafico-legenda">
+                    <li>Legenda 3</li>
+                    <li>Legenda 4</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    </main>
 
     <footer>
         <p>Zero to Hero.</p>

@@ -1,0 +1,365 @@
+body {
+    flex-direction: column;
+    margin: 0;
+}
+
+/* ========================================
+   HEADER - Usando Flexbox
+   ======================================== */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 17vh;
+    margin-bottom: 10px;
+}
+
+.header-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.header-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* ========================================
+   MAIN - Área principal de conteúdo
+   ======================================== */
+.main {
+    flex: 1;
+    padding: 40px 20px;
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.intro h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.intro p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* ========================================
+   GRID CONTAINER - Cards com Grid Layout
+   ======================================== */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    grid-template-columns: repeat(4, 2fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+/* ========================================
+   CARD FLIP - Efeito de virar o card
+   ======================================== */
+.card-flip {
+    perspective: 1000px;
+    height: 450px;
+}
+
+.card-flip.flipped .card-front {
+    transform: rotateY(180deg);
+}
+
+.card-flip.flipped .card-back {
+    transform: rotateY(0deg);
+}
+
+/* ========================================
+   CARDS - Frente e Verso
+   ======================================== */
+.card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.card-front {
+    transform: rotateY(0deg);
+}
+
+.card-back {
+    transform: rotateY(-180deg);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    justify-content: center;
+}
+
+.card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+/* Ícone decorativo */
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+/* Imagem do card */
+.card img {
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 4px solid #f5f7fa;
+}
+
+/* Título do card */
+.card h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.card-back h3 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+}
+
+/* Descrição do card */
+.card p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* Lista no verso do card */
+.card-back ul {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 250px;
+}
+
+.card-back ul li {
+    padding: 8px 0;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-back ul li:last-child {
+    border-bottom: none;
+}
+
+/* Botão do card */
+.btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.card-back .btn {
+    background: white;
+    color: #667eea;
+}
+
+.card-back .btn:hover {
+    background: #f5f7fa;
+}
+
+/* ========================================
+   SEÇÃO DE ESTATÍSTICAS - Usando Flexbox
+   ======================================== */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 50px 20px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+}
+
+.stat-item {
+    text-align: center;
+    color: white;
+    min-width: 150px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Posiciona o botão "próximo" à direita */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/*Avaliações*/
+.cards {
+    background: #fff;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 600px;
+    margin: 0 auto;
+}
+.cards h3 {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.star {
+    font-size: 28px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
+    display: inline-block;
+    margin: 0 3px;
+}
+
+.star:hover,
+.star.selected {
+    color: #ffcc00;
+    transform: scale(1.2);
+}
+
+
+textarea {
+    width: 80%;
+    min-height: 80px;
+    max-height: 200px;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    resize: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    align-items: center;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.btns {
+    display: inline-block;
+    margin-top: 15px;
+    background: linear-gradient(90deg, #4CAF50, #66BB6A);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: transform 0.1s, box-shadow 0.2s;
+    margin-bottom: 19px;
+}
+
+.btns:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btns:active {
+    transform: scale(0.97);
+}
+
+.avaliacoes-container {
+    width: 90%;
+    padding: 10px 0;
+}
+
+.avaliacoes {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    width: 400px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+.avaliacao {
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    min-width: 220px;
+    flex: 0 0 auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s;
+}
+
+.avaliacao-stars {
+    color: #ffcc00;
+    font-size: 18px;
+}
+
+.avaliacao-texto {
+    margin-top: 8px;
+    color: #333;
+    font-size: 14px;
+    text-align: left;
+}
+
+.avaliacao-info {
+    font-size: 12px;
+    color: #888;
+    margin-top: 6px;
+    text-align: left;
+}
+
+/* Scroll styling */
+.avaliacoes-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.avaliacoes-container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+.avaliacoes-container::-webkit-scrollbar-track {
+    background: #f5f6fa;
+}
