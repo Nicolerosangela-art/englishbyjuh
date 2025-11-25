@@ -34,7 +34,7 @@
 
       <!-- ===== ITENS DO MENU ===== -->
       <ul id="side_items">
-        <li class="side-item" >
+        <li class="side-item">
           <a href="../index.html">
             <i class="fa-solid fa-house"></i>
             <span class="item-description">Início</span>
@@ -72,22 +72,22 @@
   </nav>
   <!-- ===== CONTEÚDO PRINCIPAL ===== -->
   <main>
-   
+
 
     <!-- ===== SEÇÃO 1 ===== -->
-    <section class="questao quiz" >
+    <section class="questao quiz">
       <div class="personagem-container">
         <progress max="100" value="1">10%</progress>
       </div>
-     <div class="quiz-container">
-      <h1>⚡ Hogwarts English Quiz ⚡</h1>
+      <div class="quiz-container">
+        <h1>⚡ Hogwarts English Quiz ⚡</h1>
 
-      <div class="progress-bar">
-        <div class="progress"></div>
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+
+        <div id="question-container"></div>
       </div>
-
-      <div id="question-container"></div>
-    </div>
       <button id="btn-1" class="botao-continuar" type="button">
         Continuar <i class="fa-solid fa-angle-right"></i>
       </button>
@@ -158,11 +158,31 @@
         Continuar <i class="fa-solid fa-angle-right"></i>
       </button>
     </section>
+    <section class="questao quiz">
+      <div class="personagem-container">
+        <progress max="100" value="10">10%</progress>
+      </div>
+      <div class="quiz-container">
+        <h1>
+          <h1>O Chapéu Seletor quer saber... qual é o seu nível de inglês? Vamos descobrir no quiz!</h1>
+        </h1>
+
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+
+        <div id="question-container"></div>
+      </div>
+      <button id="btn-10" class="botao-continuar" type="button">
+        Continuar <i class="fa-solid fa-angle-right"></i>
+      </button>
+    </section>
 
     <!-- ========================================= -->
     <!-- ===== SEÇÕES 4 A 9 (ADICIONADAS) ===== -->
     <!-- ========================================= -->
 
+    <!-- SEÇÃO 4 -->
     <!-- SEÇÃO 4 -->
     <section class="questao4 quiz">
       <h3>Question 4: What is the correct plural form of "child"?</h3>
@@ -170,9 +190,11 @@
 
       <div class="alternativas">
         <button class="botao1">A) Childs</button>
-        <button class="botao1">B) Children</button>
+        <button class="botao1">B) Children </button>
         <button class="botao1">C) Childes</button>
         <button class="botao1">D) Childrens</button>
+        <button class="botao1">E) Childeses</button>
+        <button class="botao1">F) Childings</button>
       </div>
 
       <button id="btn-4" class="botao-continuar">
@@ -187,9 +209,11 @@
 
       <div class="alternativas">
         <button class="botao1">A) I study English well.</button>
-        <button class="botao1">B) I like studying English.</button>
+        <button class="botao1">B) I like studying English. </button>
         <button class="botao1">C) I want to learn English.</button>
         <button class="botao1">D) I am studying English now.</button>
+        <button class="botao1">E) I love play English.</button>
+        <button class="botao1">F) I enjoy to learn English.</button>
       </div>
 
       <button id="btn-5" class="botao-continuar">
@@ -205,8 +229,10 @@
       <div class="alternativas">
         <button class="botao1">A) I will go to school.</button>
         <button class="botao1">B) I am going to school.</button>
-        <button class="botao1">C) I went to school.</button>
+        <button class="botao1">C) I went to school. </button>
         <button class="botao1">D) I go to school.</button>
+        <button class="botao1">E) I have go to school.</button>
+        <button class="botao1">F) I going school yesterday.</button>
       </div>
 
       <button id="btn-6" class="botao-continuar">
@@ -221,9 +247,11 @@
 
       <div class="alternativas">
         <button class="botao1">A) Hard</button>
-        <button class="botao1">B) Easy</button>
+        <button class="botao1">B) Easy </button>
         <button class="botao1">C) Heavy</button>
         <button class="botao1">D) Light</button>
+        <button class="botao1">E) Complicated</button>
+        <button class="botao1">F) Strong</button>
       </div>
 
       <button id="btn-7" class="botao-continuar">
@@ -239,8 +267,10 @@
       <div class="alternativas">
         <button class="botao1">A) drink</button>
         <button class="botao1">B) is drinking</button>
-        <button class="botao1">C) drinks</button>
+        <button class="botao1">C) drinks </button>
         <button class="botao1">D) drank</button>
+        <button class="botao1">E) drinked</button>
+        <button class="botao1">F) has drink</button>
       </div>
 
       <button id="btn-8" class="botao-continuar">
@@ -254,10 +284,12 @@
       <progress max="100" value="90">90%</progress>
 
       <div class="alternativas">
-        <button class="botao1">A) Good morning!</button>
+        <button class="botao1">A) Good morning! </button>
         <button class="botao1">B) Good night! (as a greeting)</button>
         <button class="botao1">C) Bye!</button>
         <button class="botao1">D) Sleep well!</button>
+        <button class="botao1">E) Go morning!</button>
+        <button class="botao1">F) Hello night!</button>
       </div>
 
       <button id="btn-9" class="botao-continuar">
@@ -265,54 +297,78 @@
         Finalizar <i class="fa-solid fa-check"></i>
       </button>
     </section>
-    <section class="resultado quiz">
-      <h2 id="mensagem-final">🎉 Parabéns! 🎉</h2>
-      <p id="acertos"></p>
-      <p id="casa-hogwarts"></p>
+    <section class="resultado" style="display:none;">
+      <div class="resultado-card">
+        <h2>✨ Resultado do Quiz ✨</h2>
+        <p id="acertos" class="resultado-mensagem"></p>
 
-      <button id="btn-final" class="botao-continuar">
-        Ver formulário <i class="fa-solid fa-angle-right"></i>
-      </button>
-    </section>
-
-    <!-- ===== SEÇÃO DE CONTATO ===== -->
-    <section id="contato" class="formulario quiz">
-      <h2>Contato</h2>
-      <div class="container">
-        <h1>Vamos conversar!</h1>
-        <div class="form-container">
-          <h2 class="form-title">formulário</h2>
-
-          <form>
-            <label>Seu nome:</label>
-            <input type="text" placeholder="Digite seu nome..." required>
-
-            <label>Email:</label>
-            <input type="email" placeholder="Digite seu email..." required>
-
-            <label>Telefone (11 dígitos):</label>
-            <input type="tel" id="telefone" name="telefone" pattern="[0-9]{11}" placeholder="11999999999"
-              title="Digite exatamente 11 números" required>
-
-          
-
-
-
-            <button type="submit" class="btn-cute">Enviar ✨</button>
-          </form>
+        <div class="resultado-bar-container">
+          <div class="resultado-bar">
+            <div id="resultado-progress"></div>
+          </div>
         </div>
+
+        <p id="casa-hogwarts" class="resultado-casa"></p>
+        <button onclick="location.reload()" class="btn-reiniciar">🔁 Tentar novamente</button>
       </div>
     </section>
+
+    <section id="contato" class="formulario quiz">
+
+      <h2 class="form-title">Contato</h2>
+      <h1>Vamos conversar!</h1>
+
+      <form class="form-box">
+
+        <!-- CAMPO NOME -->
+        <div class="form-group">
+          <label>Seu nome:</label>
+          <div class="input-wrapper">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Digite seu nome..." required>
+          </div>
+        </div>
+
+        <!-- CAMPO EMAIL -->
+        <div class="form-group">
+          <label>Email:</label>
+          <div class="input-wrapper">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Digite seu email..." required>
+          </div>
+        </div>
+
+        <!-- CAMPO TELEFONE -->
+        <div class="form-group">
+          <label>Telefone (11 dígitos):</label>
+          <div class="input-wrapper">
+            <i class="fas fa-phone"></i>
+            <input type="tel" id="telefone" name="telefone" pattern="[0-9]{11}" placeholder="11999999999"
+              title="Digite exatamente 11 números" required>
+          </div>
+        </div>
+
+        <!-- BOTÃO DIREITA -->
+        <div class="form-btn-container">
+          <button type="submit" class="btn-enviar">Enviar ✨</button>
+        </div>
+
+      </form>
+    </section>
+
+
+
 
 
 
 
   </main>
-  <footer>✨ Feito com magia ✨</footer>
+  <footer>ZERO TO HERO</footer>
   <!-- ===== SCRIPTS ===== -->
   <script src="../js/nav.js"></script>
   <script src="../js/quiz-script.js"></script>
   <script src="script.js"></script>
+  <script src="https://cdn.userway.org/widget.js" data-account="lw05Phz9WY"></script>
 </body>
 
 </html>
