@@ -8,9 +8,11 @@ const btn6 = document.getElementById("btn-6");
 const btn7 = document.getElementById("btn-7");
 const btn8 = document.getElementById("btn-8");
 const btn9 = document.getElementById("btn-9");
+const btn10 = document.getElementById("btn-10");
 const btnFinal = document.getElementById("btn-final");
 
 // ===== PEGANDO AS QUESTÕES =====
+const secoes = document.querySelectorAll(".quiz");
 const questao = document.querySelector(".questao");
 const questao2 = document.querySelector(".questao2");
 const questao3 = document.querySelector(".questao3");
@@ -20,13 +22,13 @@ const questao6 = document.querySelector(".questao6");
 const questao7 = document.querySelector(".questao7");
 const questao8 = document.querySelector(".questao8");
 const questao9 = document.querySelector(".questao9");
-const resultado = document.querySelector(".resultado"); // Tela final
-
-// ===== FORMULÁRIO (esconder até o final) =====
+const questao10 = document.querySelector(".questao10");
+const resultado = document.querySelector(".resultado");
 const contato = document.getElementById("contato");
 
 // ===== VARIÁVEL DE PONTUAÇÃO =====
 let pontuacao = 0;
+let indiceSecao = 0; // Controle da pergunta atual
 
 // ===== RESPOSTAS CERTAS =====
 const respostasCorretas = {
@@ -38,17 +40,30 @@ const respostasCorretas = {
     questao9: "A"
 };
 
-// ===== FUNÇÃO GENÉRICA PARA MUDAR TELA =====
-function irPara(atual, proxima) {
-    atual.style.display = "none";
-    proxima.style.display = "flex";
+// ===== FUNÇÃO PARA MOSTRAR APENAS A SEÇÃO ATUAL =====
+function mostrarSecao(i) {
+    secoes.forEach(secao => secao.style.display = "none");
+    secoes[i].style.display = "flex";
 }
 
-// ===== CONFIGURAR CLIQUE NAS QUESTÕES =====
-function configurarQuestoes() {
-    const secoes = [questao4, questao5, questao6, questao7, questao8, questao9];
+// ===== CONFIGURAÇÕES INICIAIS =====
+document.addEventListener("DOMContentLoaded", function () {
+    mostrarSecao(indiceSecao);
+});
 
-    secoes.forEach((secao, index) => {
+// ===== FUNÇÃO GENÉRICA PARA AVANÇAR =====
+function avancar() {
+    if (indiceSecao < secoes.length - 1) {
+        indiceSecao++;
+        mostrarSecao(indiceSecao);
+    }
+}
+
+// ===== CONFIGURAR CLIQUES NAS QUESTÕES =====
+function configurarQuestoes() {
+    const secoesQuestoes = [questao4, questao5, questao6, questao7, questao8, questao9];
+
+    secoesQuestoes.forEach((secao, index) => {
         const nome = "questao" + (index + 4);
         const correta = respostasCorretas[nome];
         const botoes = secao.querySelectorAll(".botao1");
@@ -60,11 +75,11 @@ function configurarQuestoes() {
                 const letra = btn.innerText.trim().charAt(0);
 
                 if (letra === correta) {
-                    btn.style.background = "#4CAF50"; // Verde
+                    btn.style.background = "#4CAF50";
                     btn.style.color = "#fff";
-                    pontuacao++; // Conta ponto
+                    pontuacao++;
                 } else {
-                    btn.style.background = "#E74C3C"; // Vermelho
+                    btn.style.background = "#E74C3C";
                     btn.style.color = "#fff";
                 }
             });
@@ -75,23 +90,30 @@ function configurarQuestoes() {
 configurarQuestoes();
 
 // ===== PASSAGEM ENTRE TELAS =====
-btn1.addEventListener("click", () => irPara(questao, questao2));
-btn2.addEventListener("click", () => irPara(questao2, questao3));
-btn3.addEventListener("click", () => irPara(questao3, questao4));
-btn4.addEventListener("click", () => irPara(questao4, questao5));
-btn5.addEventListener("click", () => irPara(questao5, questao6));
-btn6.addEventListener("click", () => irPara(questao6, questao7));
-btn7.addEventListener("click", () => irPara(questao7, questao8));
-btn8.addEventListener("click", () => irPara(questao8, questao9));
-btn9.addEventListener("click", mostrarResultadoFinal);
+btn1.addEventListener("click", avancar);
+btn2.addEventListener("click", avancar);
+btn3.addEventListener("click", avancar);
+btn4.addEventListener("click", avancar);
+btn5.addEventListener("click", avancar);
+btn6.addEventListener("click", avancar);
+btn7.addEventListener("click", avancar);
+btn8.addEventListener("click", avancar);
+btn9.addEventListener("click", avancar);
+btn10.addEventListener("click", avancar);
+btnFinal.addEventListener("click", mostrarResultadoFinal);
 
 // ===== MOSTRAR RESULTADO FINAL =====
 function mostrarResultadoFinal() {
-    questao9.style.display = "none";
-    resultado.style.display = "flex";
+    mostrarSecao(secoes.length - 2); // Exibe a seção resultado
 
+    // Exibe acertos
     document.getElementById("acertos").innerText = `Você acertou ${pontuacao} de 6 perguntas!`;
 
+    // Calcula porcentagem para a barra
+    const porcentagem = Math.round((pontuacao / 6) * 100);
+    document.getElementById("resultado-progress").style.width = porcentagem + "%";
+
+    // Exibe casa
     let casa = "";
     if (pontuacao === 6) casa = "🦁 Grifinória";
     else if (pontuacao >= 4) casa = "🦅 Corvinal";
@@ -101,8 +123,3 @@ function mostrarResultadoFinal() {
     document.getElementById("casa-hogwarts").innerText = `Sua casa é: ${casa}`;
 }
 
-// ===== MOSTRAR FORMULÁRIO DEPOIS DO RESULTADO =====
-btnFinal.addEventListener("click", () => {
-    resultado.style.display = "none";
-    contato.style.display = "block";
-});

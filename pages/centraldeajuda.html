@@ -68,6 +68,7 @@
     </nav>
 
     <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    
     <main id="main-content">
         <header>
             <h1>Central de Ajuda</h1>
@@ -76,16 +77,18 @@
 
 
 
-        <h2 class="faq-title">Perguntas Frequentes </h2>
-        <nav aria-label="Categorias de ajuda">
+        <h2 class="faq-title">Perguntas Frequentes</h2>
+
+        <nav aria-label="Categorias de ajuda" class="categoria-nav">
             <h2>Categorias</h2>
-            <ul>
-                <li><a href="#conta">Conta e Cadastro</a></li>
-                <li><a href="#pagamentos">Pagamentos</a></li>
-                <li><a href="#aulas">Aulas</a></li>
-                <li><a href="#materiais">Materiais</a></li>
-            </ul>
+            <div class="categoria-buttons">
+                <a href="#conta" class="cat-btn">Conta e Cadastro</a>
+                <a href="#pagamentos" class="cat-btn">Pagamentos</a>
+                <a href="#aulas" class="cat-btn">Aulas</a>
+                <a href="#materiais" class="cat-btn">Materiais</a>
+            </div>
         </nav>
+
         <section id="conta" class="faq-section" aria-labelledby="faq-title">
             <h2 id="faq-title">Conta e Cadastro </h2>
             <ul>
@@ -277,9 +280,8 @@
                         </button>
                     </h3>
                     <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                        been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                        galley of type and scrambled it to make a type specimen book.
+                        Para acessar nossos materiais acessíveis, vá até a página de Serviços. Lá você encontra todos os
+                        conteúdos disponíveis de forma simples e organizada.
                     </p>
                 </li>
             </ul>
@@ -296,7 +298,7 @@
         </section>
     </main>
     <section id="contatos" class="contatos-section">
-        <h2>Fale Conosco</h2>
+        <h1>Contatos</h1>
         <p>Se você não encontrou o que procurava, nossa equipe está pronta para ajudar!</p>
 
         <div class="contatos-cards">
@@ -319,7 +321,7 @@
     </section>
 
 
-    <footer>✨ Feito com magia ✨</footer>
+    <footer>ZERO TO HERO</footer>
 
     <script src="../js/nav.js"></script>
     <script src="../js/central-script.js"></script>

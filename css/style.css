@@ -1,325 +1,338 @@
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+.page-container {
+    background-color: #ceaefd;
 }
 
-body {
-    background-color: var(#3D2364);
-}
-
-/* --- Cabeçalho --- */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    border-bottom: 1px solid var(#000000);
-    background-color: white;
-}
-
-.nav-controles i,
-.nav-acoes i,
-.btn-login {
-    margin-right: 15px;
-    cursor: pointer;
-    font-size: 1.2em;
-}
-
-.search-bar {
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    border: 1px solid var(--cor-borda);
-    border-radius: 5px;
-    padding: 5px 10px;
-    max-width: 600px;
-    margin: 0 20px;
-}
-
-.search-bar input {
-    border: none;
-    outline: none;
-    flex-grow: 1;
-    padding: 5px;
-    font-size: 1em;
-}
-
-/* --- Layout Principal (Container e Sidebar) --- */
-.container {
-    display: flex;
-    min-height: calc(100vh - 54px);
-    /* Altura da tela menos o navbar */
-}
-
-.sidebar {
-    width: 250px;
-    border-right: 1px solid var(--cor-borda);
-    background-color: #e9e9e9;
+.main-header {
+    width: 100%;
+    background-color: #3D2364;
     padding: 20px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    /* Empurra o "Zero to Hero" para baixo */
-}
-
-.profile-info {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.profile-circle {
-    width: 60px;
-    height: 60px;
-    background-color: var(--cor-borda);
-    border-radius: 50%;
-    margin: 0 auto 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5em;
-    color: var(--cor-texto);
+    box-sizing: border-box;
 }
 
-.extra-link {
-    padding: 10px 25px;
-    text-align: left;
-    margin-top: auto;
-    /* Garante que fique no canto inferior */
-    font-weight: bold;
-    border-top: 1px solid var(--cor-borda);
-    padding-top: 15px;
-}
-
-/* --- Conteúdo Principal (Main) --- */
-.content {
-    flex-grow: 1;
-    padding: 30px;
-    background-color: white;
-}
-
-.header-conteudo {
+.header-inner {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 30px;
-    border-bottom: 1px solid var(--cor-borda);
-    padding-bottom: 15px;
-    background-color: #9160da;
-    width: 196vh;
-    height: 100px;
-}
-
-.profile-meta p {
-    font-style: italic;
-    color: #666;
-}
-
-/* Seção Principal - Imagem e Sobre */
-.secao-principal {
-    display: flex;
-    gap: 30px;
-    margin-bottom: 30px;
-}
-
-.imagem-curso {
-    width: 200px;
-    height: 150px;
-    background-color: var(--cor-fundo);
-    border: 1px solid var(--cor-borda);
-    flex-shrink: 0;
-    /* Não deixa diminuir */
-}
-
-.sobre-bygyh {
-    flex-grow: 1;
-    border: 1px solid var(--cor-borda);
-    padding: 15px;
-}
-
-/* Formação bygyh */
-.formacao-bygyh {
-    margin-bottom: 30px;
-}
-
-.grid-informacoes {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* 3 colunas de tamanho igual */
-    gap: 20px;
-    margin-top: 15px;
-}
-
-.info-card {
-    height: 100px;
-    border: 1px solid var(--cor-borda);
-    background-color: #f9f9f9;
-}
-
-/* Estatísticas (Gráficos) */
-.estatisticas {
-    display: flex;
-    gap: 50px;
-    margin-bottom: 30px;
-}
-
-.grafico-card {
-    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 20px;
-    padding: 15px;
-    border: 1px solid var(--cor-borda);
-    flex: 1;
-    /* Ocupa metade do espaço */
 }
 
-.grafico-circulo {
-    width: 80px;
-    height: 80px;
-    background: conic-gradient(var(--cor-destaque) 75%, var(--cor-fundo) 0%);
-    /* Exemplo de gráfico de pizza 75% */
-    border-radius: 50%;
-    border: 1px solid var(--cor-borda);
+.header-logo {
+    height: 100px;
+    object-fit: contain;
+    user-select: none;
 }
 
-.grafico-legenda {
-    list-style: none;
-    font-size: 0.9em;
-}
-
-@media (max-width: 950px) {
-    .main-container {
-        flex-direction: column;
-        margin-left: 40px;
-        margin-right: 40px;
-    }
-
-    .card {
-        max-width: 100%;
-    }
-}
-
-.btn-menu {
-    align-items: right;
-    display: right;
-}
-
-.foto-juh {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid white;
-}
-
-.card h2 {
-    margin: 0;
-    font-size: 1.6rem;
+.welcome-text {
     text-align: center;
-}
-
-
-
-.main-container {
-    margin-left: 120px;
-    /* aproxima do menu */
-    margin-top: 80px;
-    padding: 20px;
-    display: flex;
-    gap: 40px;
-    /* espaço entre os cards */
-    align-items: stretch;
-    /* força mesma altura */
-}
-
-#sidebar.open-sidebar~.main-container {
-    margin-left: 250px;
-    /* Sidebar aberta */
-}
-
-.header {
-    width: 200%;
-    height: 10vh;
-    background-color: #3D2364;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 25px;
-    gap: 15px;
-    color: white;
-}
-
-/* Botões */
-.header button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    .card {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .foto-juh {
-        margin-bottom: 20px;
-    }
-}
-
-.logout-btn {
-    position: fixed;
-    top: 20px;
-    right: 30px;
-    background-color: #3D2364;
-    color: #ffffff;
-    border: none;
-    padding: 10px 18px;
-    border-radius: 8px;
+    color: #3D2364;
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: 500;
     font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, transform 0.2s;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.logout-btn:hover {
-    background-color: #8c5cd3;
+.byjuh-card {
+    display: flex;
+    border-radius: 15px;
+    background-color: #Ffff;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 1200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.byjuh-card:hover {
+    transform: translateY(-3px);
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-text {
+    flex: 1;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-text h2 {
+    color: #3D2364;
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.card-text p {
+    color: #080808;
+    font-size: 17px;
+    line-height: 1.4;
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.formation-card {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.formation-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.formation-card .card-image {
+    flex: 1;
+    max-width: 45%;
+    overflow: hidden;
+}
+
+.formation-card .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.formation-card:hover .card-image img {
     transform: scale(1.05);
 }
 
-/* telas até 1024px – tablets */
-@media (max-width: 1024px) {
-    .main-container {
-        margin-left: 80px;
-        /* sidebar fechada */
-    }
-
-    #sidebar.open-sidebar+.main-container {
-        margin-left: 250px;
-        /* sidebar aberta */
-    }
-
-    .card {
-        max-width: 90%;
-    }
+.section-title {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #3D2364;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-/* telas até 600px – celulares */
-@media (max-width: 600px) {
-    #sidebar {
-        width: 60px;
-    }
+.section-title + .formation-card {
+    flex-direction: row-reverse;
+}
 
-    #sidebar.open-sidebar {
-        width: 200px;
-    }
+.formation-card .card-text {
+    flex: 1;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-    .card {
-        width: 95%;
-        font-size: 14px;
-    }
+.formation-card .card-text h2 {
+    color: #3D2364;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.formation-card .card-text p {
+    color: #0c0c0c;
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.carousel-title {
+    text-align: center;
+    font-size: 24px;
+    color: #3D2364;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.coverflow-carousel {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    perspective: 1000px;
+    height: 300px;
+    position: relative;
+}
+
+.coverflow-track {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.coverflow-item {
+    min-width: 200px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0.4;
+    transform: scale(0.6);
+}
+
+.coverflow-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.coverflow-item.active {
+    transform: scale(1);
+    opacity: 1;
+    z-index: 2;
+}
+
+.coverflow-item.left {
+    transform: translateX(-150px) scale(0.8);
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.coverflow-item.right {
+    transform: translateX(150px) scale(0.8);
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: #3D2364;
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+.carousel-dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.carousel-dots .dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.carousel-dots .dot.active {
+    background-color: #3D2364;
+}
+
+.cards-section-wrapper {
+    margin: 80px 0 50px 0;
+    text-align: center;
+}
+
+.cards-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #3D2364;
+    margin-bottom: 40px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.cards-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 250px;
+    height: 300px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card:hover {
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.flip-card-front {
+    position: relative;
+}
+
+.graph-source {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.flip-card-back {
+    background-color: #3D2364;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.cards-motivation {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #3D2364;
+    font-weight: bold;
 }

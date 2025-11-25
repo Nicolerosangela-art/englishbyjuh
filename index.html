@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ByJuh</title>
+    <title>Início</title>
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/porco.png" type="image/x-icon">
@@ -13,14 +13,13 @@
 </head>
 
 <body>
-
     <!-- ===== MENU LATERAL ===== -->
     <nav id="sidebar">
         <div id="sidebar_content">
 
             <!-- ===== USUÁRIO ===== -->
             <div id="user">
-                <img src="./img/porco.png" id="user_avatar" alt="Avatar">
+                <img src="img/porco.png" id="user_avatar" alt="Avatar">
                 <p id="user_infos">
                     <span class="item-description">Fulano de Tal</span>
                     <span class="item-description">Nível de inglês</span>
@@ -37,21 +36,21 @@
                 </li>
 
                 <li class="side-item">
-                    <a href="./pages/servico.html">
+                    <a href="pages/servico.html">
                         <i class="fa-solid fa-briefcase"></i>
                         <span class="item-description">Serviços</span>
                     </a>
                 </li>
 
                 <li class="side-item">
-                    <a href="./pages/quiz.html">
+                    <a href="pages/quiz.html">
                         <i class="fa-solid fa-gamepad"></i>
                         <span class="item-description">Quiz</span>
                     </a>
                 </li>
 
                 <li class="side-item">
-                    <a href="./pages/centraldeajuda.html">
+                    <a href="pages/centraldeajuda.html">
                         <i class="fa-solid fa-circle-question"></i>
                         <span class="item-description">Central de Ajuda</span>
                     </a>
@@ -66,59 +65,109 @@
         </div>
     </nav>
 
-    <!--Ínicio da página-->
+    <header class="main-header">
+        <div class="header-inner">
+            <img src="img/logo.jpg" alt="Logo ByJuh" class="header-logo">
+        </div>
+    </header>
+
     <main class="page-container">
-        <div class="header-conteudo">
-            <h2>Título do Curso</h2>
-            <div class="profile-meta">
-                <p>+Foto da bygyh*</p>
+        <!-- CARD PRINCIPAL -->
+        <h3 class="welcome-text">Welcome to ByJuh Website – Onde aprender inglês é divertido e prático!</h3>
+        <div class="byjuh-card">
+            <!-- IMAGEM À ESQUERDA -->
+            <div class="card-image">
+                <img src="img/byjuh1.jpg" alt="Foto ByJuh">
+            </div>
+
+            <!-- TEXTO À DIREITA -->
+            <div class="card-text">
+                <h2>Who i am ?</h2>
+                <p>A @Inglês_byju é o meu espaço para tornar o aprendizado de inglês leve, humano e acessível. Minhas
+                    aulas são personalizadas, focadas em comunicação, leitura, escrita e listening skills, sempre
+                    seguindo os padrões do Cambridge English.
+                    Cada encontro transforma o inglês em uma ferramenta de expressão real — passo a passo, <strong>zero to hero.</strong></p>
+            </div>
+        </div>
+        </div>
+
+        <!-- Frase antes do card -->
+        <h3 class="section-title">Find out about my experience and training</h3>
+
+        <!-- Card Formação -->
+        <div class="byjuh-card formation-card">
+            <div class="card-image">
+                <img src="img/byjuh1.jpg" alt="Teacher Ju Oliveira">
+            </div>
+            <div class="card-text">
+                <h2>Professional Training</h2>
+                <p>Olá! Sou a Teacher <strong>Ju Oliveira</strong>, formada em Letras – Inglês e Português, com
+                    certificações FCE, Benchmark e TOEFL. Com mais de 11 anos em sala de aula e intercâmbio em Nova
+                    York, ajudo cada aluno a desenvolver confiança,
+                    autonomia e prazer ao aprender inglês.</p>
             </div>
         </div>
 
-        <section class="secao-principal">
-            <div class="imagem-curso">
+        <div class="coverflow-carousel">
+            <h2 class="carousel-title">My travels</h2>
+            <button class="carousel-arrow left-arrow">&#10094;</button>
+            <div class="coverflow-track">
+                <div class="coverflow-item"><img src="img/byjuh1.jpg" alt="Foto 1"></div>
+                <div class="coverflow-item"><img src="img/logo.jpg" alt="Foto 2"></div>
+                <div class="coverflow-item"><img src="img/porco.png" alt="Foto 3"></div>
+                <div class="coverflow-item"><img src="img/byjuh1.jpg" alt="Foto 4"></div>
+                <div class="coverflow-item"><img src="img/porco.png" alt="Foto 5"></div>
             </div>
-            <div class="sobre-bygyh">
-                <h3>Sobre a bygyh</h3>
-                <p>[Conteúdo sobre a bygyh...]</p>
+            <button class="carousel-arrow right-arrow">&#10095;</button>
+            <div class="carousel-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
             </div>
-        </section>
+        </div>
 
-        <section class="formacao-bygyh">
-            <h3>Formação da bygyh</h3>
-            <div class="grid-informacoes">
-                <div class="info-card"></div>
-                <div class="info-card"></div>
-                <div class="info-card"></div>
-            </div>
-        </section>
+        <div class="cards-section-wrapper">
+            <h2 class="cards-title">Curiosidades em Inglês</h2>
 
-        <section class="estatisticas">
-            <div class="grafico-card">
-                <div class="grafico-circulo">
+            <div class="cards-section">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="grafico1.jpg" alt="Gráfico Pessoas que Falam Inglês">
+                            <span class="graph-source">Fonte: IBGE 2023</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Fala Inglês</h3>
+                            <p>10% da população brasileira fala inglês.</p>
+                        </div>
+                    </div>
                 </div>
-                <ul class="grafico-legenda">
-                    <li>Legenda 1</li>
-                    <li>Legenda 2</li>
-                </ul>
-            </div>
 
-            <div class="grafico-card">
-                <div class="grafico-circulo">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="grafico2.jpg" alt="Gráfico Fluência em Inglês">
+                            <span class="graph-source">Fonte: IBGE 2023</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Fluência em Inglês</h3>
+                            <p>1% da população brasileira é fluente em inglês.</p>
+                        </div>
+                    </div>
                 </div>
-                <ul class="grafico-legenda">
-                    <li>Legenda 3</li>
-                    <li>Legenda 4</li>
-                </ul>
             </div>
-        </section>
-    </main>
+
+            <div class="cards-motivation">
+                <p>Aprender inglês é uma ferramenta poderosa para transformar sua vida!</p>
+            </div>
+        </div>
+
     </main>
 
-    <footer>
-        <p>Zero to Hero.</p>
-    </footer>
     <script src="js/nav.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
