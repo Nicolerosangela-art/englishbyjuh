@@ -7,7 +7,7 @@
     <title>Início</title>
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="img/porco.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/logo.jpg" type="image/x-icon">
     <!-- ===== FONTAWESOME (ícones) ===== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
@@ -19,9 +19,9 @@
 
             <!-- ===== USUÁRIO ===== -->
             <div id="user">
-                <img src="img/porco.png" id="user_avatar" alt="Avatar">
+                <img src="./img/user.jpg" id="user_avatar" alt="Avatar">
                 <p id="user_infos">
-                    <span class="item-description">Fulano de Tal</span>
+                    <span class="item-description">Usuário</span>
                     <span class="item-description">Nível de inglês</span>
                 </p>
             </div>
@@ -86,7 +86,8 @@
                 <p>A @Inglês_byju é o meu espaço para tornar o aprendizado de inglês leve, humano e acessível. Minhas
                     aulas são personalizadas, focadas em comunicação, leitura, escrita e listening skills, sempre
                     seguindo os padrões do Cambridge English.
-                    Cada encontro transforma o inglês em uma ferramenta de expressão real — passo a passo, <strong>zero to hero.</strong></p>
+                    Cada encontro transforma o inglês em uma ferramenta de expressão real — passo a passo, <strong>zero
+                        to hero.</strong></p>
             </div>
         </div>
         </div>
@@ -97,77 +98,95 @@
         <!-- Card Formação -->
         <div class="byjuh-card formation-card">
             <div class="card-image">
-                <img src="img/byjuh1.jpg" alt="Teacher Ju Oliveira">
+                <img src="img/byjuh.jpeg" alt="Teacher Ju Oliveira">
             </div>
             <div class="card-text">
                 <h2>Professional Training</h2>
                 <p>Olá! Sou a Teacher <strong>Ju Oliveira</strong>, formada em Letras – Inglês e Português, com
                     certificações FCE, Benchmark e TOEFL. Com mais de 11 anos em sala de aula e intercâmbio em Nova
-                    York, ajudo cada aluno a desenvolver confiança,
+                    York. Ajudo cada aluno a desenvolver confiança,
                     autonomia e prazer ao aprender inglês.</p>
             </div>
         </div>
 
-        <div class="coverflow-carousel">
-            <h2 class="carousel-title">My travels</h2>
-            <button class="carousel-arrow left-arrow">&#10094;</button>
-            <div class="coverflow-track">
-                <div class="coverflow-item"><img src="img/byjuh1.jpg" alt="Foto 1"></div>
-                <div class="coverflow-item"><img src="img/logo.jpg" alt="Foto 2"></div>
-                <div class="coverflow-item"><img src="img/porco.png" alt="Foto 3"></div>
-                <div class="coverflow-item"><img src="img/byjuh1.jpg" alt="Foto 4"></div>
-                <div class="coverflow-item"><img src="img/porco.png" alt="Foto 5"></div>
-            </div>
-            <button class="carousel-arrow right-arrow">&#10095;</button>
-            <div class="carousel-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-        </div>
-
-        <div class="cards-section-wrapper">
-            <h2 class="cards-title">Curiosidades em Inglês</h2>
-
-            <div class="cards-section">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="grafico1.jpg" alt="Gráfico Pessoas que Falam Inglês">
-                            <span class="graph-source">Fonte: IBGE 2023</span>
-                        </div>
-                        <div class="flip-card-back">
-                            <h3>Fala Inglês</h3>
-                            <p>10% da população brasileira fala inglês.</p>
-                        </div>
-                    </div>
+        <div class="simple-carousel-wrapper">
+            <h3 class="carousel-title">Meu Carrossel</h3>
+            <div class="simple-carousel">
+                <div class="carousel-track">
+                    <div class="carousel-item"><img src="img/byjuh1.jpg" alt="Foto 1"></div>
+                    <div class="carousel-item"><img src="img/logo.jpg" alt="Foto 2"></div>
+                    <div class="carousel-item"><img src="img/porco.png" alt="Foto 3"></div>
+                    <div class="carousel-item"><img src="img/byjuh1.jpg" alt="Foto 4"></div>
+                    <div class="carousel-item"><img src="img/porco.png" alt="Foto 5"></div>
                 </div>
 
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="grafico2.jpg" alt="Gráfico Fluência em Inglês">
-                            <span class="graph-source">Fonte: IBGE 2023</span>
-                        </div>
-                        <div class="flip-card-back">
-                            <h3>Fluência em Inglês</h3>
-                            <p>1% da população brasileira é fluente em inglês.</p>
-                        </div>
-                    </div>
+                <div class="cards-motivation">
+                    <p>Aprender inglês é uma ferramenta poderosa para transformar sua vida!</p>
                 </div>
             </div>
 
-            <div class="cards-motivation">
-                <p>Aprender inglês é uma ferramenta poderosa para transformar sua vida!</p>
+            <div class="cards-container">
+
+                <!-- CARD 1 -->
+                <div class="card" onclick="flipCard(this)">
+                    <div class="card-inner">
+
+                        <!-- FRENTE -->
+                        <div class="card-front">
+                            <img src="img/grafico5.png" alt="Gráfico 1" class="grafico">
+                            <span class="fonte">Fonte: https://url-do-site.com</span>
+                        </div>
+
+                        <!-- TRÁS -->
+                        <div class="card-back">
+                            <span class="apenas">Apenas</span>
+                            <span class="porcentagem">5%</span>
+                            <span class="descricao">pessoas falam inglês no Brasil.</span>
+                            <span class="equivalente">Equivalente a 10 milhões de pessoas.</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="card" onclick="flipCard(this)">
+                    <div class="card-inner">
+
+                        <!-- FRENTE -->
+                        <div class="card-front">
+                            <img src="img/grafico5.png" alt="Gráfico 2" class="grafico">
+                            <span class="fonte">Fonte: https://url-do-site.com</span>
+                        </div>
+
+                        <!-- TRÁS -->
+                        <div class="card-back">
+                            <span class="apenas">Apenas</span>
+                            <span class="porcentagem">5%</span>
+                            <span class="descricao">pessoas falam inglês no Brasil.</span>
+                            <span class="equivalente">Equivalente a 10 milhões de pessoas.</span>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
-        </div>
 
     </main>
 
     <script src="js/nav.js"></script>
     <script src="js/script.js"></script>
+    <script src="https://cdn.userway.org/widget.js" data-account="lw05Phz9WY"></script>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
 </body>
 
 </html>

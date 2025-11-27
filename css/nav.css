@@ -12,7 +12,7 @@ html {
 }
 
 body {
-    background-color: #e3e9f7;
+    background-color: #ceaefd;
     min-height: 100vh;
     overflow-x: hidden;
     /* Evita scroll horizontal */
@@ -129,6 +129,7 @@ main {
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
+    border: 2px;
 }
 
 #open_btn:hover {
@@ -186,64 +187,72 @@ footer {
 
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
-    main {
-        padding-left: calc(82px + 15px);
-        padding: 15px;
-        padding-left: calc(82px + 15px);
-        padding-bottom: 80px;
-    }
-
-    #sidebar.open-sidebar {
-        min-width: 200px;
-    }
-
-    #sidebar.open-sidebar~main {
-        padding-left: calc(200px + 15px);
-    }
-}
-
-@media (max-width: 600px) {
-    main {
-        padding-left: 15px;
-        padding-bottom: 100px;
-    }
-
+  /* Sidebar vira barra inferior */
     #sidebar {
-        min-width: 60px;
-        border-radius: 0;
+        position: fixed;
+        border-radius: 0px 0px 0px 0px;
+        bottom: 0;
+        top: auto;
+        left: 0;
+        right: 0;
+        width: 100%;
+        min-height: auto;
+        height: 60px;
+        z-index: 999;
+        flex-direction: row;
+        align-items: center;
     }
 
-    #sidebar.open-sidebar {
-        min-width: 180px;
+    /* Ocultar bloco do usuário no mobile (opcional) */
+    #user {
+        display: none;
     }
 
-    footer {
-        position: static;
-        padding: 15px;
-        font-size: 14px;
+    /* Conteúdo em linha */
+    #sidebar_content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        padding: 0 10px;
     }
 
-    body {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 480px) {
-    main {
-        padding: 10px;
-        padding-bottom: 100px;
-    }
-
-    #sidebar {
-        min-width: 50px;
+    /* Ul ocupa toda a barra, em linha */
+    #side_items {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0;
     }
 
     .side-item {
-        padding: 10px;
+        flex: 1;
+        text-align: center;
     }
 
-    #user_avatar {
-        width: 40px;
-        height: 40px;
+    .side-item a {
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+        font-size: 0.65rem;
+    }
+
+    .side-item i {
+        font-size: 1.1rem;
+    }
+
+    .item-description {
+        font-size: 0.7rem;
+    }
+
+    /* Botão de abrir menu some ou pode ser reposicionado */
+    #open_btn {
+        display: none;
+    }
+
+    /* Dê um padding-bottom no conteúdo principal para não ficar escondido atrás da barra */
+    main, .main-content {
+        padding-bottom: 70px; /* ajuste conforme a altura da barra */
     }
 }

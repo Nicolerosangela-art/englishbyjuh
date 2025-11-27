@@ -1,5 +1,5 @@
 .page-container {
-    background-color: #ceaefd;
+    background-color: #e6d7fa;
 }
 
 .main-header {
@@ -117,7 +117,7 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.section-title + .formation-card {
+.section-title .formation-card {
     flex-direction: row-reverse;
 }
 
@@ -137,111 +137,50 @@
 }
 
 .formation-card .card-text p {
-    color: #0c0c0c;
-    font-size: 14px;
+    color: #080808;
+    font-size: 17px;
     line-height: 1.4;
     margin: 0;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.carousel-title {
+.simple-carousel-wrapper {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
     text-align: center;
-    font-size: 24px;
-    color: #3D2364;
-    margin-bottom: 20px;
-    font-weight: bold;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.coverflow-carousel {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto 40px auto;
-    perspective: 1000px;
-    height: 300px;
+.carousel-title {
+    font-size: 24px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #3D2364;
+    margin-bottom: 20px;
+}
+
+.simple-carousel {
+    overflow: hidden;
     position: relative;
 }
 
-.coverflow-track {
+.carousel-track {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100%;
+    gap: 20px;
 }
 
-.coverflow-item {
-    min-width: 200px;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    opacity: 0.4;
-    transform: scale(0.6);
-}
-
-.coverflow-item img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
+.carousel-item {
+    flex: 0 0 18%;
+    /* 5 imagens visíveis */
     border-radius: 15px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
 }
 
-.coverflow-item.active {
-    transform: scale(1);
-    opacity: 1;
-    z-index: 2;
-}
-
-.coverflow-item.left {
-    transform: translateX(-150px) scale(0.8);
-    opacity: 0.6;
-    z-index: 1;
-}
-
-.coverflow-item.right {
-    transform: translateX(150px) scale(0.8);
-    opacity: 0.6;
-    z-index: 1;
-}
-
-.carousel-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 30px;
-    color: #3D2364;
-    background: rgba(255, 255, 255, 0.7);
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    z-index: 5;
-}
-
-.left-arrow {
-    left: 10px;
-}
-
-.right-arrow {
-    right: 10px;
-}
-
-.carousel-dots {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.carousel-dots .dot {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    margin: 0 5px;
-    background-color: #ccc;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.carousel-dots .dot.active {
-    background-color: #3D2364;
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
 }
 
 .cards-section-wrapper {
@@ -330,9 +269,122 @@
 }
 
 .cards-motivation {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 18px;
-    color: #3D2364;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 24px;
     font-weight: bold;
+    color: #3D2364;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+/* CONTAINER DOS CARDS */
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+
+/* CARD */
+
+.card {
+    width: 300px;
+    height: 380px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+
+/* FACES DO CARD */
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* FRENTE */
+
+.card-front {
+    padding: 10px;
+}
+
+.grafico {
+    width: 100%;
+    border-radius: 15px;
+    transition: transform .3s ease;
+}
+
+.grafico:hover {
+    transform: scale(1.04);
+}
+
+.fonte {
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    font-size: 12px;
+    color: #555;
+}
+
+
+/* VERSO */
+
+.card-back {
+    transform: rotateY(180deg);
+    padding: 20px;
+    text-align: center;
+}
+
+.apenas {
+    font-size: 14px;
+    color: #444;
+}
+
+.porcentagem {
+    font-size: 70px;
+    font-weight: bold;
+    color: #3D2364;
+    margin-top: -10px;
+}
+
+.descricao {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+}
+
+.equivalente {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
 }
