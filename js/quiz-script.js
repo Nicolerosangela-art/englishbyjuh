@@ -1,125 +1,167 @@
-// ===== PEGANDO BOTÕES =====
-const btn1 = document.getElementById("btn-1");
-const btn2 = document.getElementById("btn-2");
-const btn3 = document.getElementById("btn-3");
-const btn4 = document.getElementById("btn-4");
-const btn5 = document.getElementById("btn-5");
-const btn6 = document.getElementById("btn-6");
-const btn7 = document.getElementById("btn-7");
-const btn8 = document.getElementById("btn-8");
-const btn9 = document.getElementById("btn-9");
-const btn10 = document.getElementById("btn-10");
-const btnFinal = document.getElementById("btn-final");
+// script corrigido - cole no final do seu HTML ou no script.js
 
-// ===== PEGANDO AS QUESTÕES =====
-const secoes = document.querySelectorAll(".quiz");
-const questao = document.querySelector(".questao");
-const questao2 = document.querySelector(".questao2");
-const questao3 = document.querySelector(".questao3");
-const questao4 = document.querySelector(".questao4");
-const questao5 = document.querySelector(".questao5");
-const questao6 = document.querySelector(".questao6");
-const questao7 = document.querySelector(".questao7");
-const questao8 = document.querySelector(".questao8");
-const questao9 = document.querySelector(".questao9");
-const questao10 = document.querySelector(".questao10");
-const resultado = document.querySelector(".resultado");
-const contato = document.getElementById("contato");
+document.addEventListener("DOMContentLoaded", () => {
+  // seleção de seções do quiz (ordem DOM)
+  const secoes = Array.from(document.querySelectorAll("section.quiz"));
 
-// ===== VARIÁVEL DE PONTUAÇÃO =====
-let pontuacao = 0;
-let indiceSecao = 0; // Controle da pergunta atual
+  // elementos resultado e formulário (padrão: existem no HTML)
+  const resultadoSection = document.querySelector("section.quiz.resultado");
+  const formSection = document.getElementById("contato");
 
-// ===== RESPOSTAS CERTAS =====
-const respostasCorretas = {
+  // pontuação e índice atual
+  let pontuacao = 0;
+  let indiceSecao = 0;
+
+  // respostas - use as chaves como "questao4", "questao5", etc.
+  const respostasCorretas = {
     questao4: "B",
     questao5: "B",
     questao6: "C",
     questao7: "B",
     questao8: "C",
     questao9: "A"
-};
+  };
 
-// ===== FUNÇÃO PARA MOSTRAR APENAS A SEÇÃO ATUAL =====
-function mostrarSecao(i) {
-    secoes.forEach(secao => secao.style.display = "none");
-    secoes[i].style.display = "flex";
-}
-
-// ===== CONFIGURAÇÕES INICIAIS =====
-document.addEventListener("DOMContentLoaded", function () {
-    mostrarSecao(indiceSecao);
-});
-
-// ===== FUNÇÃO GENÉRICA PARA AVANÇAR =====
-function avancar() {
-    if (indiceSecao < secoes.length - 1) {
-        indiceSecao++;
-        mostrarSecao(indiceSecao);
-    }
-}
-
-// ===== CONFIGURAR CLIQUES NAS QUESTÕES =====
-function configurarQuestoes() {
-    const secoesQuestoes = [questao4, questao5, questao6, questao7, questao8, questao9];
-
-    secoesQuestoes.forEach((secao, index) => {
-        const nome = "questao" + (index + 4);
-        const correta = respostasCorretas[nome];
-        const botoes = secao.querySelectorAll(".botao1");
-
-        botoes.forEach(btn => {
-            btn.addEventListener("click", () => {
-                botoes.forEach(b => b.disabled = true);
-
-                const letra = btn.innerText.trim().charAt(0);
-
-                if (letra === correta) {
-                    btn.style.background = "#4CAF50";
-                    btn.style.color = "#fff";
-                    pontuacao++;
-                } else {
-                    btn.style.background = "#E74C3C";
-                    btn.style.color = "#fff";
-                }
-            });
-        });
+  // mostrar só a seção i
+  function mostrarSecao(i) {
+    secoes.forEach((s, idx) => {
+      s.style.display = idx === i ? "flex" : "none";
     });
+    indiceSecao = i;
+    // scroll suave para o topo da seção
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  // inicial
+  if (secoes.length === 0) return; // nada a fazer
+  mostrarSecao(0);
+
+  // função para avançar para a próxima seção
+  function avancar() {
+    const proximo = indiceSecao + 1;
+    if (proximo >= secoes.length) return;
+    // se o próximo for a seção de resultado (tem class 'resultado')
+    if (secoes[proximo].classList.contains("resultado")) {
+      mostrarResultadoFinal();
+      return;
+    }
+    mostrarSecao(proximo);
+  }
+
+  // configurar alternativas: atribui letras A,B,C... e listeners
+  function configurarAlternativas() {
+    // para cada seção que tem .alternativas
+    secoes.forEach(secao => {
+      const containerAlt = secao.querySelector(".alternativas");
+      if (!containerAlt) return;
+
+      const botoes = Array.from(containerAlt.querySelectorAll(".botao1"));
+      // atribui letra baseada no índice (A, B, C...)
+      botoes.forEach((btn, idx) => {
+        const letra = String.fromCharCode(65 + idx); // 65='A'
+        btn.dataset.letra = letra;
+        // opcional: mostra a letra no botão se quiser (comente se não quiser)
+        // btn.innerHTML = `<strong>${letra})</strong> ` + btn.innerHTML;
+
+        btn.addEventListener("click", () => {
+          // evita clicar duas vezes
+          if (btn.disabled) return;
+
+          // desativa todos os botões dessa seção
+          botoes.forEach(b => b.disabled = true);
+
+          // determina chave da questão, convertendo id 'questao-4' -> 'questao4'
+          // ou, se a seção não tiver id, tenta usar classe (fallback)
+          let chave = "";
+          if (secao.id) {
+            chave = secao.id.replace(/-/g, ""); // "questao-4" -> "questao4"
+          } else {
+            // tenta achar classe que contenha "questao"
+            const cl = Array.from(secao.classList).find(c => c.includes("questao"));
+            chave = cl || "";
+          }
+
+          const correta = respostasCorretas[chave];
+
+          // marca visualmente
+          if (correta && btn.dataset.letra === correta) {
+            btn.style.background = "#4CAF50";
+            btn.style.color = "#fff";
+            pontuacao++;
+          } else {
+            btn.style.background = "#E74C3C";
+            btn.style.color = "#fff";
+            // marca também o correto (se soubermos qual é)
+            if (correta) {
+              const certoBtn = botoes.find(b => b.dataset.letra === correta);
+              if (certoBtn) {
+                certoBtn.style.background = "#4CAF50";
+                certoBtn.style.color = "#fff";
+              }
+            }
+          }
+        });
+      });
+    });
+  }
+
+  configurarAlternativas();
+
+  // listeners dos botões "Continuar" (todos os botões com class botao-continuar)
+  const continuarBtns = Array.from(document.querySelectorAll(".botao-continuar"));
+  continuarBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      // se o botão estiver dentro da seção de resultado, ignora aqui
+      const parentSec = btn.closest("section.quiz");
+      if (parentSec && parentSec.classList.contains("resultado")) return;
+      // senão, avança
+      avancar();
+    });
+  });
+
+
+  // função para mostrar resultado final
+  function mostrarResultadoFinal() {
+    // esconde todas
+    secoes.forEach(s => (s.style.display = "none"));
+    // exibe a seção resultado (se existir)
+    if (resultadoSection) {
+      resultadoSection.style.display = "flex";
+      // texto de acertos
+      const acertosEl = document.getElementById("acertos");
+      if (acertosEl) acertosEl.innerText = `Você acertou ${pontuacao} de 6 perguntas!`;
+
+      // barra de progresso
+      const porcentagem = Math.round((pontuacao / 6) * 100);
+      const prog = document.getElementById("resultado-progress");
+      if (prog) prog.style.width = porcentagem + "%";
+
+      // casa
+      const casaEl = document.getElementById("casa-hogwarts");
+      let casa = "";
+      if (pontuacao === 6) casa = "🦁 Grifinória — Corajoso e determinado!";
+      else if (pontuacao >= 4) casa = "🦅 Corvinal — Inteligente e curioso!";
+      else if (pontuacao >= 2) casa = "🐍 Sonserina — Ambicioso e estratégico!";
+      else casa = "🦡 Lufa-Lufa — Leal, gentil e dedicado!";
+      if (casaEl) casaEl.innerText = `Sua casa é: ${casa}`;
+    } else {
+      // se não existe, apenas avança para a última seção disponível
+      mostrarSecao(secoes.length - 1);
+    }
+  }
+
+  // botão "Continuar para formulário" dentro da seção resultado (se existir)
+  const btnFinalLocal = document.getElementById("btn-final");
+  if (btnFinalLocal) {
+    btnFinalLocal.addEventListener("click", () => {
+      if (resultadoSection) resultadoSection.style.display = "none";
+      if (formSection) formSection.style.display = "block";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+});
+function abrirFormulario() {
+  document.querySelector('.resultado').style.display = 'none';
+  document.querySelector('.formulario').style.display = 'flex';
 }
-
-configurarQuestoes();
-
-// ===== PASSAGEM ENTRE TELAS =====
-btn1.addEventListener("click", avancar);
-btn2.addEventListener("click", avancar);
-btn3.addEventListener("click", avancar);
-btn4.addEventListener("click", avancar);
-btn5.addEventListener("click", avancar);
-btn6.addEventListener("click", avancar);
-btn7.addEventListener("click", avancar);
-btn8.addEventListener("click", avancar);
-btn9.addEventListener("click", avancar);
-btn10.addEventListener("click", avancar);
-btnFinal.addEventListener("click", mostrarResultadoFinal);
-
-// ===== MOSTRAR RESULTADO FINAL =====
-function mostrarResultadoFinal() {
-    mostrarSecao(secoes.length - 2); // Exibe a seção resultado
-
-    // Exibe acertos
-    document.getElementById("acertos").innerText = `Você acertou ${pontuacao} de 6 perguntas!`;
-
-    // Calcula porcentagem para a barra
-    const porcentagem = Math.round((pontuacao / 6) * 100);
-    document.getElementById("resultado-progress").style.width = porcentagem + "%";
-
-    // Exibe casa
-    let casa = "";
-    if (pontuacao === 6) casa = "🦁 Grifinória";
-    else if (pontuacao >= 4) casa = "🦅 Corvinal";
-    else if (pontuacao >= 2) casa = "🐍 Sonserina";
-    else casa = "🦡 Lufa-Lufa";
-
-    document.getElementById("casa-hogwarts").innerText = `Sua casa é: ${casa}`;
-}
-
+document.getElementById('btn-final').addEventListener('click', abrirFormulario);

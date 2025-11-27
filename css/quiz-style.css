@@ -12,7 +12,7 @@ section.quiz {
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background: rgba(72, 98, 149, 0.12);
+  background: #fff;
   border: 2px solid rgb(61, 35, 100);
   border-radius: 12px;
   height: 80vh;
@@ -20,10 +20,35 @@ section.quiz {
   transition: opacity 0.5s ease;
 }
 
+
+.main-header {
+    width: 100%;
+    background-color: #3D2364;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.header-inner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-logo {
+    height: 100px;
+    object-fit: contain;
+    user-select: none;
+}
+
 /* =====================================================
    HEADERS E TEXTOS
 ===================================================== */
-h1, h3 {
+h1,
+h3 {
   text-align: center;
   margin-bottom: 20px;
   color: rgb(61, 35, 100);
@@ -52,7 +77,6 @@ h3 {
   justify-content: center;
 }
 
-/* Responsividade alternativas */
 @media (max-width: 480px) {
   .alternativas {
     grid-template-columns: repeat(2, 40%);
@@ -61,10 +85,11 @@ h3 {
 }
 
 /* =====================================================
-   BOTÕES GERAIS QUIZ
+   BOTÕES
 ===================================================== */
 .botao1,
-.botao-continuar {
+.botao-continuar,
+.btn-reiniciar {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -77,12 +102,14 @@ h3 {
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
-  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s, color 0.3s;
 }
 
 .botao1:hover,
-.botao-continuar:hover {
+.botao-continuar:hover,
+.btn-reiniciar:hover {
   background-color: rgb(248, 151, 42);
+  color: black;
   transform: scale(1.05);
   box-shadow: 0 3px 8px rgba(0, 0, 0, .15);
 }
@@ -93,38 +120,60 @@ h3 {
   bottom: 5%;
 }
 
+.btn-reiniciar {
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+}
+
+@media (max-width: 480px) {
+
+  .botao-continuar,
+  .btn-reiniciar {
+    position: static;
+    width: 100%;
+    margin-top: 10px;
+    transform: none !important;
+  }
+}
+
 .botao1 img {
   width: 24px;
   height: 24px;
 }
 
-/* Responsividade botão continuar */
-@media (max-width: 480px) {
-  .botao-continuar {
-    right: 50%;
-    transform: translateX(50%);
-  }
-}
-
 /* =====================================================
-   BARRA DE PROGRESSO
+   RESULTADO DO QUIZ (SEM BARRA DE PROGRESSO)
 ===================================================== */
-progress {
-  width: 90%;
-  max-width: 600px;
-  height: 20px;
-  border-radius: 15px;
-  margin-bottom: 20px;
+section.resultado {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  background: #fff;
+  border: 2px solid rgb(61, 35, 100);
+  border-radius: 12px;
+  height: 80vh;
+  position: relative;
+  transition: opacity 0.5s ease;
 }
 
-progress::-webkit-progress-bar {
-  background-color: #f2f2f2;
-  border-radius: 10px;
+section.resultado h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: rgb(61, 35, 100);
 }
 
-progress::-webkit-progress-value {
-  background-color: rgb(61, 35, 100);
-  transition: width 0.3s ease;
+.resultado-mensagem,
+.resultado-casa {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(61, 35, 100);
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .personagem {
@@ -133,25 +182,22 @@ progress::-webkit-progress-value {
 }
 
 /* =====================================================
-   FORMULÁRIO QUIZ (NOVO E MELHORADO)
-===================================================== */
-/* =====================================================
-   FORMULÁRIO QUIZ (NOVO + ALTURA IGUAL AOS OUTROS)
+   FORMULÁRIO
 ===================================================== */
 .formulario {
-  background: rgba(72, 98, 149, 0.12); /* mesma cor de fundo das outras seções */
+  background: rgba(72, 98, 149, 0.12);
   padding: 40px;
-  max-width: 650px; /* largura semelhante aos outros cartões */
+  max-width: 650px;
   margin: 60px auto;
   border-radius: 12px;
-  border: 2px solid rgb(61, 35, 100); /* roxo do site */
+  border: 2px solid rgb(61, 35, 100);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   display: none;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* centraliza verticalmente */
-  height: 80vh; /* altura igual às outras telas */
-  text-align: center; /* centraliza todos os textos */
+  justify-content: center;
+  height: 80vh;
+  text-align: center;
   animation: fadeIn 0.5s ease;
 }
 
@@ -162,7 +208,6 @@ progress::-webkit-progress-value {
   color: rgb(61, 35, 100);
 }
 
-/* Caixa de conteúdo */
 .form-box {
   display: flex;
   flex-direction: column;
@@ -170,7 +215,6 @@ progress::-webkit-progress-value {
   width: 90%;
 }
 
-/* Textos alinhados no centro */
 .form-group label {
   display: block;
   margin-bottom: 5px;
@@ -180,7 +224,6 @@ progress::-webkit-progress-value {
   color: rgb(61, 35, 100);
 }
 
-/* INPUT COM ÍCONE */
 .input-wrapper {
   display: flex;
   align-items: center;
@@ -205,13 +248,10 @@ progress::-webkit-progress-value {
 }
 
 .input-wrapper:focus-within {
-  border-color: rgb(248, 151, 42); /* laranja do hover dos botões */
+  border-color: rgb(248, 151, 42);
   box-shadow: 0 0 8px rgba(248, 161, 66, 0.5);
 }
 
-/* ========================
-   BOTÃO ALINHADO À DIREITA
-======================== */
 .form-btn-container {
   display: flex;
   justify-content: flex-end;
@@ -235,48 +275,95 @@ progress::-webkit-progress-value {
   transform: scale(1.05);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-/* Descer a barra de progresso */
-.progress-container {
-    margin-top: 40px; /* Aumente se quiser mais para baixo */
-}
 
-/* Caso use diretamente a barra */
-.progress-bar {
-    margin-top: 10px;
-}
+/* =====================================================
+   RESPONSIVIDADE GERAL
+===================================================== */
+/* 📱 RESPONSIVIDADE INCRÍVEL PARA CELULARES */
+@media (max-width: 768px) {
 
-/* Descer as questões */
-.question-container {
-    margin-top: 30px; /* Ajuste conforme desejar */
-}
-
-/* Se as perguntas estiverem dentro de section */
-#quiz, .quiz-section, section.quiz {
-    padding-top: 60px; /* Aumente ou diminua conforme o teste */
-}
-
-/* Espaçamento entre a barra e o texto */
-h2.quiz-title, .quiz h2 {
-    margin-top: 25px;
-}
-
-
-/* ========================================
-   RESPONSIVIDADE
-======================================== */
-@media (max-width: 480px) {
-  .formulario {
-    width: 90%;
+  /* 🔹 Caixa do quiz mais adaptada */
+  section.quiz {
+    width: 95%;
     height: auto;
-    padding: 25px;
+    padding: 15px;
   }
 
-  .form-title {
+  /* 🔹 Títulos mais equilibrados */
+  h1 {
     font-size: 22px;
   }
 
-  .btn-enviar {
-    padding: 10px 18px;
-    font-size: 15px;
+  h3 {
+    font-size: 18px;
+  }
+
+  /* 🔹 Alternativas maiorzinhas e melhor espaçadas */
+  .alternativas {
+    grid-template-columns: repeat(2, 45%);
+    grid-template-rows: repeat(3, auto);
+    gap: 15px;
+    margin-top: 5%;
+  }
+
+  /* 🔹 Ajuste dos botões */
+  .botao1 {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .botao-continuar,
+  .btn-reiniciar {
+    position: static;
+    width: 100%;
+    margin-top: 15px;
+    padding: 14px;
+    font-size: 16px;
+  }
+
+  /* 🔹 Imagem/personagem menor */
+  .personagem {
+    width: 25vh;
+    max-width: 220px;
+  }
+}
+
+/* 📲 RESPONSIVO PARA TELAS MUITO PEQUENAS (tipo celular pequeno) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  .alternativas {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(6, auto);
+    gap: 10px;
+  }
+
+  .botao1 {
+    width: 100%;
+    padding: 12px;
+  }
+
+  section.resultado {
+    width: 95%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .resultado-mensagem,
+  .resultado-casa {
+    font-size: 16px;
+  }
+
+  .botao-continuar,
+  .btn-reiniciar {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
   }
 }

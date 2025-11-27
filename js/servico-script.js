@@ -56,3 +56,49 @@ enviar.addEventListener('click', () => {
     stars.forEach(s => s.classList.remove('selected'));
     nota = 0;
 });
+
+
+// JavaScript para trocar as cores dos cards
+document.addEventListener('DOMContentLoaded', function() {
+    const houseButtons = document.querySelectorAll('.house-btn');
+    
+    houseButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const house = this.getAttribute('data-house');
+            const card = this.closest('.stat-item');
+            
+            // Remove todas as classes de casa do card
+            card.classList.remove('house-gryffindor', 'house-ravenclaw', 'house-hufflepuff', 'house-slytherin');
+            
+            // Remove active de todos os botões do card
+            card.querySelectorAll('.house-btn').forEach(btn => btn.classList.remove('active'));
+            
+            // Adiciona a nova classe de casa
+            card.classList.add(`house-${house}`);
+            
+            // Marca o botão como ativo
+            this.classList.add('active');
+            
+            // Salva a escolha no localStorage (opcional)
+            const level = card.getAttribute('data-level');
+            localStorage.setItem(`house-${level}`, house);
+            
+            // Feedback visual com animação
+            card.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+                card.style.transform = 'scale(1)';
+            }, 200);
+        });
+    });
+    
+    // Restaura as escolhas salvas (opcional)
+    document.querySelectorAll('.stat-item').forEach(card => {
+        const level = card.getAttribute('data-level');
+        const savedHouse = localStorage.getItem(`house-${level}`);
+        
+        if (savedHouse) {
+            card.classList.add(`house-${savedHouse}`);
+            card.querySelector(`[data-house="${savedHouse}"]`).classList.add('active');
+        }
+    });
+});
