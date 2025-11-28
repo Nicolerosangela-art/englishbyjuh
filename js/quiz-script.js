@@ -105,6 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+
   configurarAlternativas();
 
   // listeners dos botões "Continuar" (todos os botões com class botao-continuar)

@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Central de Ajuda-projeto by juh</title>
-    <link rel="shortcut icon" href="../img/logo.jpg " type="image/x-icon">
+    <link rel="shortcut icon" href="../img/central.png " type="image/x-icon">
     <!-- ===== FONTAWESOME (ícones) ===== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="../css/central-style.css">
     <link rel="stylesheet" href="../css/nav.css">
+    <link rel="shortcut icon" href="../img/logo.jpg" type="image/x-icon">
 </head>
 
 
@@ -21,9 +22,9 @@
 
             <!-- ===== USUÁRIO ===== -->
             <div id="user">
-                <img src="../img/porco.png" id="user_avatar" alt="Avatar">
+                <img src="../img/user.jpg" id="user_avatar" alt="Avatar">
                 <p id="user_infos">
-                    <span class="item-description">Fulano de Tal</span>
+                    <span class="item-description">Usuário</span>
                     <span class="item-description">Nível de inglês</span>
                 </p>
             </div>
@@ -68,7 +69,13 @@
     </nav>
 
     <!-- ===== CONTEÚDO PRINCIPAL ===== -->
-    
+
+    <header class="main-header">
+        <div class="header-inner">
+            <img src="../img/logo.jpg" alt="Logo ByJuh" class="header-logo">
+        </div>
+    </header>
+
     <main id="main-content">
         <header>
             <h1>Central de Ajuda</h1>
@@ -77,7 +84,13 @@
 
 
 
-        <h2 class="faq-title">Perguntas Frequentes</h2>
+
+        <section aria-labelledby="search-title">
+            <form action="#" method="get">
+                <input id="search-input" type="text" placeholder="Digite sua dúvida aqui..." />
+                <button type="submit">Buscar</button>
+            </form>
+        </section>
 
         <nav aria-label="Categorias de ajuda" class="categoria-nav">
             <h2>Categorias</h2>
@@ -286,46 +299,49 @@
                 </li>
             </ul>
         </section>
-
-
-        <section aria-labelledby="search-title">
-            <h2 id="search-title">Buscar</h2>
-            <form action="#" method="get">
-                <label for="search-input" class="visually-hidden">Digite sua dúvida</label>
-                <input id="search-input" type="text" placeholder="Digite sua dúvida aqui..." />
-                <button type="submit">Buscar</button>
-            </form>
-        </section>
     </main>
-    <section id="contatos" class="contatos-section">
-        <h1>Contatos</h1>
-        <p>Se você não encontrou o que procurava, nossa equipe está pronta para ajudar!</p>
 
-        <div class="contatos-cards">
+    <li>
+        <section id="contatos" class="contatos-section">
+            <h1>Contatos</h1>
+            <p>Se você não encontrou o que procurava, nossa equipe está pronta para ajudar!</p>
 
-            <div class="contato-card">
-                <img src="../img/icon/instagramicon.png" alt="Instagram">
-                <h3>Instagram</h3>
-                <p>Acompanhe novidades e mande sua dúvida pelo direct.</p>
-                <a href="https://www.instagram.com/ingles_byju" target="_blank" class="contato-btn">Acessar</a>
-            </div>
-
-            <div class="contato-card">
-                <img src="../img/icon/whatsapp (2).png" alt="WhatsApp">
-                <h3>WhatsApp</h3>
-                <p>Fale diretamente com nosso suporte em poucos segundos.</p>
-                <a href="https://wa.me/5511975898312" target="_blank" class="contato-btn whatsapp">Enviar mensagem</a>
-            </div>
-
-        </div>
-    </section>
+            <div class="contatos-cards">
 
 
-    <footer>ZERO TO HERO</footer>
+                <div class="contato-card">
+                    <img src="../img/icon/instagramicon.png" alt="Instagram">
+                    <h3>Instagram</h3>
+                    <p>Acompanhe novidades e mande sua dúvida pelo direct.</p>
+                    <a href="https://www.instagram.com/ingles_byju" target="_blank" class="contato-btn">Acessar</a>
+                </div>
+
+                <div class="contato-card">
+                    <img src="../img/whatsapp.png3.avif" alt="WhatsApp">
+                    <h3>WhatsApp</h3>
+                    <p>Fale diretamente com nosso suporte em poucos segundos.</p>
+                    <a href="https://wa.me/5511975898312" target="_blank" class="contato-btn whatsapp">Enviar
+                        mensagem</a>
+        </section>
+
+    </li>
+
+
+    <footer>© 2025 By Juh- Todos os direitos reservados</footer>
 
     <script src="../js/nav.js"></script>
     <script src="../js/central-script.js"></script>
     <script src="https://cdn.userway.org/widget.js" data-account="lw05Phz9WY"></script>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
 </body>
 
 </html>
