@@ -11,7 +11,7 @@ btnFlips.forEach(btn => {
         cardFlip.classList.toggle('flipped');
     });
 });
-
+// JavaScript para sistema de avaliação com estrelas
 const stars = document.querySelectorAll('.star');
 const comentario = document.getElementById('comentario');
 const nomeInput = document.getElementById('nome');
@@ -26,7 +26,7 @@ stars.forEach((star, index) => {
         stars.forEach((s, i) => s.classList.toggle('selected', i < nota));
     });
 });
-
+// Enviar avaliação
 enviar.addEventListener('click', () => {
     const texto = comentario.value.trim();
     const nome = nomeInput.value.trim() || "Anônimo";
@@ -34,7 +34,7 @@ enviar.addEventListener('click', () => {
         alert("Por favor, selecione uma nota e escreva um comentário.");
         return;
     }
-
+    // Formatar data e hora
     const data = new Date();
     const dataFormatada = data.toLocaleDateString('pt-BR') + " " + data.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
 
@@ -46,7 +46,7 @@ enviar.addEventListener('click', () => {
       <div class="avaliacao-info">${nome} • ${dataFormatada}</div>
     `;
     lista.appendChild(nova);
-
+    // Mostrar mensagem de sucesso
     mensagem.style.display = "block";
     setTimeout(() => mensagem.style.display = "none", 2000);
 
@@ -59,30 +59,30 @@ enviar.addEventListener('click', () => {
 
 
 // JavaScript para trocar as cores dos cards
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const houseButtons = document.querySelectorAll('.house-btn');
-    
+
     houseButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const house = this.getAttribute('data-house');
             const card = this.closest('.stat-item');
-            
+
             // Remove todas as classes de casa do card
             card.classList.remove('house-gryffindor', 'house-ravenclaw', 'house-hufflepuff', 'house-slytherin');
-            
+
             // Remove active de todos os botões do card
             card.querySelectorAll('.house-btn').forEach(btn => btn.classList.remove('active'));
-            
+
             // Adiciona a nova classe de casa
             card.classList.add(`house-${house}`);
-            
+
             // Marca o botão como ativo
             this.classList.add('active');
-            
+
             // Salva a escolha no localStorage (opcional)
             const level = card.getAttribute('data-level');
             localStorage.setItem(`house-${level}`, house);
-            
+
             // Feedback visual com animação
             card.style.transform = 'scale(1.05)';
             setTimeout(() => {
@@ -90,12 +90,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 200);
         });
     });
-    
+
     // Restaura as escolhas salvas (opcional)
     document.querySelectorAll('.stat-item').forEach(card => {
         const level = card.getAttribute('data-level');
         const savedHouse = localStorage.getItem(`house-${level}`);
-        
+
         if (savedHouse) {
             card.classList.add(`house-${savedHouse}`);
             card.querySelector(`[data-house="${savedHouse}"]`).classList.add('active');

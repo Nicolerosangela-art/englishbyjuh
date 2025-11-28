@@ -18,16 +18,35 @@ section.quiz {
   height: 80vh;
   position: relative;
   transition: opacity 0.5s ease;
+  
 }
 
+section#questao-1 h1,
+section#quiz-intro h1,
+section.resultado h2,
+section.resultado .resultado-mensagem,
+section.resultado .resultado-casa {
+  text-align: left !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  align-items: center !important;
+ 
+}
 
+/* 🔹 2. Ajuste no container da questão para não centralizar o texto */
+section#questao-1,
+section#quiz-intro,
+section.resultado {
+  align-items: flex-start !important;
+}
 .main-header {
     width: 100%;
     background-color: #3D2364;
     padding: 20px 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     box-sizing: border-box;
 }
 
@@ -44,6 +63,206 @@ section.quiz {
     user-select: none;
 }
 
+
+/* ESTILO ESPECIAL PARA H1 DAS PARTES INICIAIS DO QUIZ */
+section#questao-1 h1,
+section#quiz-intro h1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;          /* Centraliza o texto */
+  padding: 20px 15px;
+  width: 100%;
+  max-width: 900px;            /* Limite para não ficar tão largo */
+  margin: auto;               /* Centraliza */
+  font-size: 26px;
+  line-height: 1.4;
+  background: rgba(61, 35, 100, 0.07);  /* Fundo suave */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  border-radius: 12px;
+  animation: fadeInDown 0.8s ease;
+  color: rgb(61, 35, 100);
+}
+
+.main-header {
+  width: 100%;
+  background-color: #3D2364;
+  padding: 20px 0; /* 🔹 estava errado antes */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-logo {
+  height: 100px;
+  object-fit: contain;
+}
+
+/* -----------------------------------------------------
+   4️⃣ SEÇÃO DO QUIZ
+----------------------------------------------------- */
+section.quiz {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: #fff;
+  border: 2px solid rgb(61, 35, 100);
+  border-radius: 12px;
+  height: 80vh;
+  position: relative;
+  transition: opacity 0.5s ease;
+}
+
+/* -----------------------------------------------------
+   5️⃣ TÍTULOS GERAIS DO QUIZ
+----------------------------------------------------- */
+h1, h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(61, 35, 100);
+}
+
+/* Título principal */
+h1 {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* Subtítulo */
+h3 {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+/* -----------------------------------------------------
+   6️⃣ TÍTULOS QUE RECEBEM EFEITO DE MAGIA
+----------------------------------------------------- */
+.title-magic {
+  position: relative;
+  font-weight: 600;
+}
+
+.title-magic::after {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 120%;
+  top: -10%;
+  left: -25%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 10%, transparent 70%);
+  animation: shimmer 2s infinite linear;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-150%); }
+  50% { transform: translateX(0) translateY(-10%); }
+  100% { transform: translateX(150%); }
+}
+
+/* -----------------------------------------------------
+   8️⃣ ALTERNATIVAS DO QUIZ
+----------------------------------------------------- */
+.alternativas {
+  width: 100%;
+  margin-top: 10%;
+  display: grid;
+  grid-template-columns: repeat(3, 15%);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 5%;
+  justify-content: center;
+}
+
+/* -----------------------------------------------------
+   9️⃣ BOTÕES
+----------------------------------------------------- */
+.botao1,
+.botao-continuar,
+.btn-reiniciar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: rgb(61, 35, 100);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.botao1:hover,
+.botao-continuar:hover,
+.btn-reiniciar:hover {
+  background-color: rgb(248, 151, 42);
+  color: black;
+  transform: scale(1.05);
+}
+
+/* -----------------------------------------------------
+   🔟 TELA FINAL DO RESULTADO
+----------------------------------------------------- */
+section.resultado {
+  display: none;
+  text-align: center;
+  padding: 30px;
+  border: 2px solid rgb(61, 35, 100);
+  border-radius: 12px;
+}
+
+.resultado-casa,
+.resultado-mensagem {
+  font-size: 18px;
+}
+
+/* -----------------------------------------------------
+   1️⃣1️⃣ RESPONSIVIDADE (CELULAR)
+----------------------------------------------------- */
+@media (max-width: 768px) {
+  section.quiz { width: 95%; height: auto; }
+  h1 { font-size: 22px; }
+  .alternativas {
+    grid-template-columns: repeat(2, 45%);
+  }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 20px; }
+  .alternativas { grid-template-columns: 100%; }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 768px) {
+  section#questao-1 h1,
+  section#quiz-intro h1 {
+    font-size: 20px;
+    padding: 15px;
+  }
+}
+
+/* Animação de entrada suave */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* =====================================================
    HEADERS E TEXTOS
 ===================================================== */
@@ -56,6 +275,7 @@ h3 {
 
 h1 {
   font-size: 26px;
+  text-align: justify;
   font-weight: 600;
 }
 

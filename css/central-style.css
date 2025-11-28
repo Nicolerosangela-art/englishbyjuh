@@ -299,6 +299,41 @@ h3 {
     max-width: 600px;
 }
 
+/* Botão padrão (Acessar - Instagram) */
+.contato-btn {
+    display: inline-block;
+    padding: 10px 22px;
+    background-color: #3D2364;
+    /* Roxo padrão do seu site */
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: 0.3s ease;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Hover do botão padrão */
+.contato-btn:hover {
+    background-color: #5a34a6;
+    /* Roxo mais claro */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+    transform: translateY(-3px);
+}
+
+/* Botão WhatsApp */
+.contato-btn.whatsapp {
+    background-color: #0db260;
+}
+
+/* Hover do WhatsApp */
+.contato-btn.whatsapp:hover {
+    background-color: #14d978;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+    transform: translateY(-3px);
+}
 
 /* ============================
    RODAPÉ
@@ -330,6 +365,7 @@ h3 {
         gap: 12px;
     }
 }
+
 @media (max-width: 700px) {
     .buttons-group {
         flex-direction: column;
@@ -345,6 +381,7 @@ h3 {
         padding: 12px;
     }
 }
+
 @media (max-width: 600px) {
 
     h1 {
@@ -365,10 +402,6 @@ h3 {
 }
 
 @media (max-width: 480px) {
-
-    body {
-        padding: 10px;
-    }
 
     input,
     button {
