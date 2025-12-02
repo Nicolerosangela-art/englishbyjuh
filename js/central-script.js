@@ -87,3 +87,43 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const searchValue = document.getElementById("search-input").value.toLowerCase().trim();
+
+    // Seleciona todas as perguntas
+    const questions = document.querySelectorAll("h3 button span");
+
+    let encontrouAlgo = false;
+
+    questions.forEach(question => {
+        const text = question.innerText.toLowerCase();
+        const li = question.closest("li");
+
+        if (text.includes(searchValue)) {
+            li.style.display = "block";
+            encontrouAlgo = true;
+        } else {
+            li.style.display = "none";
+        }
+    });
+
+    // AGORA verificar cada seção (categoria)
+    const sections = document.querySelectorAll(".faq-section");
+
+    sections.forEach(section => {
+        const lis = section.querySelectorAll("li");
+        let temVisivel = false;
+
+        lis.forEach(li => {
+            if (li.style.display !== "none") {
+                temVisivel = true;
+            }
+        });
+
+        // Se não tem nenhum li visível → Esconde a categoria inteira
+        section.style.display = temVisivel ? "block" : "none";
+    });
+});

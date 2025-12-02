@@ -28,6 +28,7 @@
 .welcome-text {
     text-align: center;
     color: #3D2364;
+    font-size: 22px;
     margin-bottom: 20px;
     font-weight: 500;
     font-weight: bold;
@@ -37,12 +38,18 @@
 .byjuh-card {
     display: flex;
     border-radius: 15px;
-    background-color: #Ffff;
+    background-color: #fff;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     max-width: 1200px;
-    height: 200px;
+    height: 300px;
     margin: 0 auto;
+}
+
+.byjuh-card .card-image {
+    flex: 1;
+    max-width: 45%; 
+    overflow: hidden;
 }
 
 .byjuh-card:hover {
@@ -68,7 +75,7 @@
     color: #3D2364;
     margin-bottom: 8px;
     font-size: 20px;
-
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .card-text p {
@@ -76,16 +83,27 @@
     font-size: 17px;
     line-height: 1.4;
     margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+/* CARD 2 – usa as mesmas proporções do primeiro */
 .formation-card {
-    margin-top: 30px;
-    margin-bottom: 40px;
+    margin-top: 70px;
+    margin-bottom: 90px;
+    display: flex;
+    border-radius: 15px;
+    background-color: #fff;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 1200px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .formation-card:hover {
     transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 30px 25px rgba(0, 0, 0, 0.18);
 }
 
 .formation-card .card-image {
@@ -115,10 +133,6 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.section-title .formation-card {
-    flex-direction: row-reverse;
-}
-
 .formation-card .card-text {
     flex: 1;
     padding: 15px 20px;
@@ -131,6 +145,7 @@
     color: #3D2364;
     margin-bottom: 10px;
     font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .formation-card .card-text p {
@@ -138,8 +153,9 @@
     font-size: 17px;
     line-height: 1.4;
     margin: 0;
-
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
 
 .simple-carousel-wrapper {
     width: 100%;
@@ -180,6 +196,13 @@
     object-fit: cover;
 }
 
+.simple-carousel .carousel-item img {
+    width: 200px;          
+    height: 250px;         
+    object-fit: cover;     
+    border-radius: 15px;   
+}
+
 .cards-section-wrapper {
     margin: 80px 0 50px 0;
     text-align: center;
@@ -205,6 +228,13 @@
     width: 250px;
     height: 300px;
     perspective: 1000px;
+}
+
+.fonte a {
+    color: #3D2364;
+    font-weight: bold;
+    text-decoration: underline;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .flip-card-inner {
@@ -404,46 +434,17 @@
     .byjuh-card {
         flex-direction: column;
         height: auto;
-
     }
-
-    .card-text p {
-        font-size: 20px;
-        text-align: left;
-    }
-
-    .card-text h2 {
-        font-size: 24px;
-
-    }
-
-    .formation-card .card-text p {
-        font-size: 20px;
-        text-align: left;
-    }
-
-    .formation-card .card-text h2 {
-        font-size: 24px;
-
-    }
-    .formation-card .card-image {
+    .byjuh-card .card-image{
         max-width: 100%;
-        margin-bottom: 15px;
-    }
-
-    .simple-carousel-wrapper {
-        max-width: 100%;
-        margin: 20px auto;
+        height: 200px;
     }
     .carousel-item {
-        flex: 0 0 40%;
+        flex: 0 0 50%;
     }
-    .cards-section {
-        flex-direction: column;
-        align-items: center;
-    }
-
 }
 
 /* 📲 RESPONSIVO PARA TELAS MUITO PEQUENAS (tipo celular pequeno) */
-@media (max-width: 480px) {}
+@media (max-width: 480px) {
+
+}
