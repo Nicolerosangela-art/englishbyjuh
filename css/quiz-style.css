@@ -5,6 +5,7 @@
 ===================================================== */
 body {
   font-family: 'Poppins', sans-serif;
+
 }
 
 section.quiz {
@@ -18,12 +19,9 @@ section.quiz {
   height: 80vh;
   position: relative;
   transition: opacity 0.5s ease;
-  
+
 }
 
-section#questao-1 h1,
-section#quiz-intro h1,
-section.resultado h2,
 section.resultado .resultado-mensagem,
 section.resultado .resultado-casa {
   text-align: left !important;
@@ -31,19 +29,22 @@ section.resultado .resultado-casa {
   align-items: flex-start !important;
   justify-content: center !important;
   align-items: center !important;
- 
+
 }
-.processo{
-   width: 85%;
+
+.processo {
+  width: 85%;
   height: 12px;
-  background: #7840da;
+  background: #e7d9ff;
   border-radius: 20px;
   overflow: hidden;
   margin: 20px auto;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.15);
-    height: 100%;
+  height: 100%;
   width: 0%;
-  
+  background: linear-gradient(90deg, #9b79c9, #b998f0);
+  border-radius: 20px;
+  transition: width 0.4s ease-in-out;
 }
 
 .progress-fill {
@@ -54,33 +55,28 @@ section.resultado .resultado-casa {
   transition: width 0.4s ease-in-out;
 }
 
-/* 🔹 2. Ajuste no container da questão para não centralizar o texto */
-section#questao-1,
-section#quiz-intro,
-section.resultado {
-  align-items: flex-start !important;
-}
+
 .main-header {
-    width: 100%;
-    background-color: #3D2364;
-    padding: 20px 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    box-sizing: border-box;
+  width: 100%;
+  background-color: #3D2364;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
 }
 
 .header-inner {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header-logo {
-    height: 100px;
-    object-fit: contain;
-    user-select: none;
+  height: 100px;
+  object-fit: contain;
+  user-select: none;
 }
 
 
@@ -91,24 +87,32 @@ section#quiz-intro h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;          /* Centraliza o texto */
+  text-align: center;
+  /* Centraliza o texto */
   padding: 20px 15px;
-  width: 100%;
-  max-width: 900px;            /* Limite para não ficar tão largo */
-  margin: auto;               /* Centraliza */
+  width: 90%;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin:0 auto;
+  /* Centraliza */
   font-size: 26px;
   line-height: 1.4;
-  background: rgba(61, 35, 100, 0.07);  /* Fundo suave */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  background: rgba(61, 35, 100, 0.07);
+  /* Fundo suave */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
   animation: fadeInDown 0.8s ease;
   color: rgb(61, 35, 100);
+
 }
+
 
 .main-header {
   width: 100%;
   background-color: #3D2364;
-  padding: 20px 0; /* 🔹 estava errado antes */
+  padding: 20px 0;
+  /* 🔹 estava errado antes */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -145,7 +149,8 @@ section.quiz {
 /* -----------------------------------------------------
    5️⃣ TÍTULOS GERAIS DO QUIZ
 ----------------------------------------------------- */
-h1, h3 {
+h1,
+h3 {
   text-align: center;
   margin-bottom: 20px;
   color: rgb(61, 35, 100);
@@ -178,14 +183,22 @@ h3 {
   height: 120%;
   top: -10%;
   left: -25%;
-  background: radial-gradient(circle, rgba(255,255,255,0.3) 10%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 70%);
   animation: shimmer 2s infinite linear;
 }
 
 @keyframes shimmer {
-  0% { transform: translateX(-150%); }
-  50% { transform: translateX(0) translateY(-10%); }
-  100% { transform: translateX(150%); }
+  0% {
+    transform: translateX(-150%);
+  }
+
+  50% {
+    transform: translateX(0) translateY(-10%);
+  }
+
+  100% {
+    transform: translateX(150%);
+  }
 }
 
 /* -----------------------------------------------------
@@ -250,20 +263,33 @@ section.resultado {
    1️⃣1️⃣ RESPONSIVIDADE (CELULAR)
 ----------------------------------------------------- */
 @media (max-width: 768px) {
-  section.quiz { width: 95%; height: auto; }
-  h1 { font-size: 22px; }
+  section.quiz {
+    width: 95%;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
   .alternativas {
     grid-template-columns: repeat(2, 45%);
   }
 }
 
 @media (max-width: 480px) {
-  h1 { font-size: 20px; }
-  .alternativas { grid-template-columns: 100%; }
+  h1 {
+    font-size: 20px;
+  }
+
+  .alternativas {
+    grid-template-columns: 100%;
+  }
 }
 
 /* Responsividade para celulares */
 @media (max-width: 768px) {
+
   section#questao-1 h1,
   section#quiz-intro h1 {
     font-size: 20px;
@@ -277,6 +303,7 @@ section.resultado {
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

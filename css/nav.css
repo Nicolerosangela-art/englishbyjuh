@@ -202,7 +202,10 @@ footer {
         flex-direction: row;
         align-items: center;
     }
-
+    
+ footer {
+margin-bottom: 55px;
+}
     /* Ocultar bloco do usuário no mobile (opcional) */
     #user {
         display: none;
@@ -252,7 +255,14 @@ footer {
     }
 
     /* Dê um padding-bottom no conteúdo principal para não ficar escondido atrás da barra */
-    main, .main-content {
-        padding-bottom: 70px; /* ajuste conforme a altura da barra */
+    main{
+        padding-left: 20px; /* remover padding lateral extra */
+        padding-bottom: 80px; /* ajuste conforme a altura da barra */
+
     }
+    .main-content {
+        padding-bottom: 70px; /* ajuste conforme a altura da barra */
+        padding-left: 20px; /* remover padding lateral extra */
+    }
+
 }
