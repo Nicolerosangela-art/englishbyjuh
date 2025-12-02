@@ -14,7 +14,7 @@ O **By Juh** é um site criado para entregar:
 ## 🌐 Tecnologias Utilizadas
 - **HTML5**
 - **CSS3**
-- **JavaScript** (opcional)
+- **JavaScript**
 
 ## 📱 Responsividade
 O projeto inclui Media Queries e boas práticas de layout flexível, garantindo boa visualização em:
